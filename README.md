@@ -1,19 +1,64 @@
-# React + Vite
+## Этап 1. Создание проекта и первая отправка в Git (Один раз на проект)
+Вы создали чистую папку на компьютере, открыли её в VS Code:
+1.	Инициализируйте Git в этой папке:
+git init
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+2.	Создайте главный файл index.html прямо в корне и папки css/, js/, images/.
+3.	Сделайте первое сохранение в главную ветку main:
+git add .
+git commit -m "Initial commit: структура проекта и главный index.html"
 
-Currently, two official plugins are available:
+4.	Привяжите локальный проект к GitHub:
+○	Создайте пустой репозиторий на сайте GitHub.
+○	Скопируйте ссылку на него и вставьте в терминал:
+git remote add origin ССЫЛКА_НА_ВАШ_РЕПОЗИТОРИЙ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+5.	Переименуйте ветку в main (если она называлась master) и запушьте:
+git branch -M main
+git push -u origin main
 
-## React Compiler
+## Этап 2. Работа со страницами через ветки (Повторять для каждой страницы)
+Теперь вы хотите сверстать новую страницу (например, вторую страницу — home.html).
+Шаг A: Создание новой ветки
+1.	Перед созданием ветки всегда возвращайтесь на main и обновляйте её, чтобы не пропустить чужие или свои прошлые слияния:
+git checkout main
+git pull origin main
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+2.	Создайте новую ветку (например, home) и сразу переключитесь на неё:
+git checkout -b home
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+Шаг B: Написание кода в ветке
+1.	В корне создаете файл home.html и верстаете его.
+2.	В процессе или в конце работы сохраняете изменения локально (коммитите):
+git add .
+git commit -m "Сверстал страницу home"
 
-## Expanding the Oxlint configuration
+3.	Отправляете эту ветку на GitHub:
+git push origin home
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Шаг C: Слияние (Merge) через Pull Request на GitHub
+1.	Зайдите на сайт GitHub в свой репозиторий.
+2.	Нажмите появившуюся желтую кнопку Compare & pull request (или зайдите в раздел Pull Requests -> New Pull Request).
+3.	Проверьте направление: base: main ← compare: home.
+4.	Нажмите Create pull request.
+5.	Если конфликтов нет (горит зеленая галочка), нажмите Merge pull request, а затем Confirm merge.
+6.	Готово! Ветка слита с main на GitHub.
+Этап 3. Переход к следующей странице (например, level3.html)
+После того как вы нажали фиолетовую кнопку Merged на GitHub, возвращайтесь в терминал VS Code:
+1.	Переключитесь обратно на главную ветку:
+git checkout main
+
+2.	Обязательно скачайте только что слитую страницу home.html с GitHub на свой компьютер:
+git pull origin main
+
+3.	Теперь ваш локальный main абсолютно актуален. Создавайте ветку для третьей страницы:
+git checkout -b level3
+
+4.	Повторяйте Шаги B и C из Этапа 2 для всех оставшихся страниц сайта.
+Этап 4. Финал и Публикация (После слияния всех веток)
+Когда все 7 страниц слиты в main:
+1.	В VS Code переключитесь на main и сделайте git pull origin main.
+2.	Зайдите на GitHub в настройки репозитория: Settings -> Pages.
+3.	В графе Branch выберите main и нажмите Save.
+4.	Через минуту ваш многостраничный сайт будет доступен всему миру по указанной ссылке!
+Если у вас возникнут сложности на каком-то конкретном шаге (например, конфликт слияния или ошибка пуша), напишите, на каком этапе вы находитесь, и я помогу разобраться! У вас уже есть JavaScript код для управления модальными окнами, или 
