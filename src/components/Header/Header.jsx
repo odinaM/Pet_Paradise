@@ -1,6 +1,6 @@
 import './Header.css';
-import logo from './img/Logo.png';
-import korzina from './img/korzina.png';
+import logo from '../../assets/img/Logo.png';
+import korzina from '../../assets/img/korzina.png';
 import { NavLink } from 'react-router-dom';
 
 export function Header() {

@@ -12,7 +12,7 @@
   height: 685px;
   display: flex;
   justify-content: center;
-  background-image: url('./img/fonService.png');
+  background-image: url('../../assets/img/fonService.png');
   background-size: cover;
   background-size: auto;
   background-position: center;
