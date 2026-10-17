@@ -173,3 +173,34 @@
   z-index: 1;              /* ← ниже, чем у текста */
   pointer-events: none;    /* клики «проходят сквозь» картинку */
 }
+
+/*третья секция*/
+.section_service_offers{
+  width: 100%;
+  height: 120px;
+  background-color: #FFFFFF;
+}
+
+.service_block_offers{
+  width: 794px;
+  height: 198px;
+  margin: 0 auto;
+  margin-top: 0;
+  display: block;
+}
+
+.service_title_offers{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: center;
+  color: #410075;
+  margin-bottom: 30px;
+}
+
+.service_desc_offers{
+  font-size: 18px;
+  line-height: 22px;
+  color: #595959;
+  text-align: center;
+}

@@ -53,7 +53,17 @@ export function Service() {
             </div>
             <img src={dog3} alt="" />
           </div>
+        </div>
+      </section>
 
+      <section className="section_service_offers">
+        <div className="service_block_offers">
+          <h1 className="service_title_offers">
+            WHAT WE OFFER
+          </h1>
+          <p className="service_desc_offers">
+            At our pet care center, we offer a comprehensive range of services to keep your pets happy and healthy. From grooming and bathing to ensure they look and feel their best, to veterinary check-ups and vaccinations for their health and safety, we cover all your pet's needs. We also provide specialized training programs to help with behavior and obedience, as well as luxurious boarding facilities for when you're away. Our dedicated team is passionate about providing the highest level of care and love for your furry friends, treating them as if they were our own.
+          </p>
         </div>
       </section>
     </main>
