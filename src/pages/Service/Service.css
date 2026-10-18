@@ -164,6 +164,12 @@
   border: none;
 }
 
+.service_card_btn:hover{
+  border: 2px solid #410075;
+  background-color: transparent;
+  color: #410075;
+}
+
 .service_mini_card > img {
   position: absolute;
   bottom: 0;
@@ -438,4 +444,99 @@
   line-height: 22px;
   color: #252525;
   text-align: left;
+}
+
+/* стиль для модалок */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Темный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-window {
+  width: 890px;
+  height: 500px;
+  background-color: #F2E2FF;
+  border-radius: 10px; 
+  padding-top: 33px;
+  padding-left: 55px; 
+  padding-right: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.service_modal {
+  width: 835px;
+  height: 435px;
+  display: flex;
+  align-items: center;
+}
+
+.servise_modal_info {
+  width: 545px;
+  height: 426px;
+  padding-top: 24px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.servise_modal_title {
+  width: 327px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 38px;
+  line-height: 34px;
+  font-weight: bold;
+  color: #252525;
+  margin: 0 0 16px 0;
+}
+
+.servise_modal_desc {
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  color: #595959;
+  margin: 0;
+}
+
+.servise_modal_close {
+  font-family: 'Assistant', sans-serif;
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: bold;
+  color: #410075;
+  text-decoration: underline;
+  margin-top: auto;
+  margin-left: 0; 
+  align-self: flex-start; 
+  cursor: pointer;
+}
+
+.servise_modal_close:hover {
+  opacity: 0.8;
+}
+
+.servise_modal_img {
+  width: 268px;
+  height: 435px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.servise_modal_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
 }
