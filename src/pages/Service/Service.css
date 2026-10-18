@@ -166,19 +166,20 @@
 
 .service_mini_card > img {
   position: absolute;
-  bottom: 0;               /* лапы на нижней границе карточки */
-  right: 0;                /* или right: -20px, если собака должна чуть вылезать справа */
-  height: 250px;           /* ← больше высоты карточки, чтобы голова вылезла сверху */
-  width: auto;             /* сохраняет пропорции */
-  z-index: 1;              /* ← ниже, чем у текста */
-  pointer-events: none;    /* клики «проходят сквозь» картинку */
+  bottom: 0;
+  right: 0;
+  height: 250px;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /*третья секция*/
 .section_service_offers{
   width: 100%;
-  height: 120px;
+  height: 200px;
   background-color: #FFFFFF;
+  margin-bottom: 50px;
 }
 
 .service_block_offers{
@@ -203,4 +204,157 @@
   line-height: 22px;
   color: #595959;
   text-align: center;
+}
+
+/* 4 section */
+
+.section_service_training{
+  width: 100%;
+  height: 1930px;
+  background-image: url(../../assets/img/fon_section4\ .png);
+  margin-top: 50px;
+  padding-top: 32px;
+}
+
+.service_training_allBlocks{
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.service_training_block{
+  width: 1200px;
+  margin: 0 auto;
+  height: 266px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.servise_training_inf1{
+  width: 488px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text1{
+  width: 387px;
+  height: 150px;
+
+}
+
+.service_training_title1{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: right;
+  color: #252525;
+}
+
+.service_training_desc1{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: right;
+}
+
+.service_training_number1,
+.service_training_number3,
+.service_training_number5
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #410075;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  margin-left: 21px;
+}
+
+.service_training_number2,
+.service_training_number4,
+.service_training_number6
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #8B0004;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  margin-left: 21px;
+}
+
+.service_training_img > img{
+  width: 590px;
+  height: 260px;
+}
+.service_training_img{
+  width: 590px;
+  height: 260px;
+}
+
+.servise_training_inf2{
+  width: 387px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text2{
+  width: 285px;
+  height: 150px;
+}
+
+.service_training_title2{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: left;
+  color: #252525;
+}
+
+.service_training_desc2{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: left;
+  letter-spacing: 0%;
+  width: 285px;
+  margin-left: 0;
+}
+
+.servise_training_inf3{
+  width: 488px;
+  height: 106px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text3{
+  width: 388px;
+  height: 106px;
+}
+
+.service_training_title3{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: right;
+  color: #252525;
+}
+
+.service_training_desc3{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: right;
 }
