@@ -111,8 +111,8 @@ export function Service() {
           <div className="service_training_block">
             <div className="servise_training_inf3">
               <div className="service_training_text3">
-                <h1 className="service_training_title">PRIVATE TRAINING</h1>
-                <p className="service_training_desc">
+                <h1 className="service_training_title3">PRIVATE TRAINING</h1>
+                <p className="service_training_desc3">
                   Get one-on-one attention with our Private Training sessions. Customized plans address specific needs, making it ideal for pets requiring focused training.
                 </p>
               </div>
@@ -130,8 +130,8 @@ export function Service() {
 
             <div className="servise_training_inf4">
               <div className="service_training_text4">
-                <h1 className="service_training_title">SPECIALTY TRAINING</h1>
-                <p className="service_training_desc">
+                <h1 className="service_training_title4">SPECIALTY TRAINING</h1>
+                <p className="service_training_desc4">
                   Tailored for specific needs, our Specialty Program covers advanced obedience, agility, or behavior modification. It's perfect for competition preparation or addressing unique challenges.
                 </p>
               </div>
@@ -142,8 +142,8 @@ export function Service() {
           <div className="service_training_block">
             <div className="servise_training_inf5">
               <div className="service_training_text5">
-                <h1 className="service_training_title">VIRTUAL TRAINING</h1>
-                <p className="service_training_desc">
+                <h1 className="service_training_title5">VIRTUAL TRAINING</h1>
+                <p className="service_training_desc5">
                   Enjoy flexible, convenient training from home with our Virtual Training program. Perfect for busy schedules, it offers personalized sessions via video calls for effective results.
                 </p>
               </div>
@@ -161,8 +161,8 @@ export function Service() {
 
             <div className="servise_training_inf6">
               <div className="service_training_text6">
-                <h1 className="service_training_title">SECURITY TRAINING</h1>
-                <p className="service_training_desc">
+                <h1 className="service_training_title6">SECURITY TRAINING</h1>
+                <p className="service_training_desc6">
                   Train your dog for protection roles with our Security Program. Covering obedience and specialized techniques, it prepares your dog for security tasks while maintaining a balanced demeanor.
                 </p>
               </div>

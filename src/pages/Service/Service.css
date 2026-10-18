@@ -358,3 +358,84 @@
   color: #252525;
   text-align: right;
 }
+
+.servise_training_inf4{
+  width: 488px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text4{
+  width: 388px;
+  height: 128px;
+}
+
+.service_training_title4{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: left;
+  color: #252525;
+}
+
+.service_training_desc4{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: left;
+}
+
+.servise_training_inf5{
+  width: 488px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text5{
+  width: 388px;
+  height: 128px;
+}
+
+.service_training_title5{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: right;
+  color: #252525;
+}
+
+.service_training_desc5{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: right;
+}
+
+.servise_training_inf6{
+  width: 488px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text6{
+  width: 388px;
+  height: 128px;
+}
+
+.service_training_title6{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: left;
+  color: #252525;
+}
+
+.service_training_desc6{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: left;
+}
