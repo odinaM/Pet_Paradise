@@ -1,0 +1,360 @@
+/*Обёртка страницы*/
+.service {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Assistant', sans-serif;
+}
+
+/*Первая секция*/
+.section_service__hero {
+  width: 100%;
+  height: 685px;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../assets/img/fonService.png');
+  background-size: cover;
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+
+.service__hero-inner {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/*Текстовый блок*/
+.service__hero-text {
+  margin-top: 320px;
+
+}
+
+.service__title {
+  font-family: 'Assistant', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #410075;
+  margin: 0;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.service__subtitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #A1BE97;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.service__desc {
+  font-family: 'Assistant', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #595959;
+  margin-top: 24px;
+  line-height: 1.3;
+  width: 345px;
+  margin-left: 0;
+}
+
+/*вторая секция*/
+.section-service_cards{
+  width: 100%;
+  height: 210px;
+  background-color: #FFFFFF;
+  margin-bottom: 100px;
+}
+
+.service_cards_inner{
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; 
+  gap: 20px;
+}
+
+.service_mini_card{
+  width: 387px;
+  height: 210px;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  overflow: visible;
+}
+
+.mini_card_1{
+  background-color: #D9D9D9;
+  padding-top: 20px;
+  padding-left: 21px;
+  padding-bottom: 20px;
+}
+
+.mini_card_2{
+  background-color: #F2E2FF;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.mini_card_3{
+  background-color: #E8A8AA;
+  padding-top: 19.5px;
+  padding-left: 20.5px;
+  padding-bottom: 20.5px;
+}
+
+.service_card_info{
+  width: 163px;
+  height: 170px;
+  margin-left: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.service_card_title{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #252525;
+}
+
+.service_card_title_2{
+  display: flex;
+  height: 48px;
+  align-items: center;
+}
+
+.service_card_desc_1,
+.service_card_desc_3{
+  font-size: 18px;
+  line-height: 22px;
+  color: #595959;
+}
+
+.service_card_desc_2{
+  font-size: 12px;
+  color: #595959;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.service_card_desc_1{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.service_card_desc_3{
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+.service_card_btn{
+  width: 147px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: #410075;
+  color: #FFFFFF;
+  font-size: 12px;
+  border: none;
+}
+
+.service_mini_card > img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 250px;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/*третья секция*/
+.section_service_offers{
+  width: 100%;
+  height: 200px;
+  background-color: #FFFFFF;
+  margin-bottom: 50px;
+}
+
+.service_block_offers{
+  width: 794px;
+  height: 198px;
+  margin: 0 auto;
+  margin-top: 0;
+  display: block;
+}
+
+.service_title_offers{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: center;
+  color: #410075;
+  margin-bottom: 30px;
+}
+
+.service_desc_offers{
+  font-size: 18px;
+  line-height: 22px;
+  color: #595959;
+  text-align: center;
+}
+
+/* 4 section */
+
+.section_service_training{
+  width: 100%;
+  height: 1930px;
+  background-image: url(../../assets/img/fon_section4\ .png);
+  margin-top: 50px;
+  padding-top: 32px;
+}
+
+.service_training_allBlocks{
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.service_training_block{
+  width: 1200px;
+  margin: 0 auto;
+  height: 266px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.servise_training_inf1{
+  width: 488px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text1{
+  width: 387px;
+  height: 150px;
+
+}
+
+.service_training_title1{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: right;
+  color: #252525;
+}
+
+.service_training_desc1{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: right;
+}
+
+.service_training_number1,
+.service_training_number3,
+.service_training_number5
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #410075;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  margin-left: 21px;
+}
+
+.service_training_number2,
+.service_training_number4,
+.service_training_number6
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #8B0004;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  margin-left: 21px;
+}
+
+.service_training_img > img{
+  width: 590px;
+  height: 260px;
+}
+.service_training_img{
+  width: 590px;
+  height: 260px;
+}
+
+.servise_training_inf2{
+  width: 387px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text2{
+  width: 285px;
+  height: 150px;
+}
+
+.service_training_title2{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: left;
+  color: #252525;
+}
+
+.service_training_desc2{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: left;
+  letter-spacing: 0%;
+  width: 285px;
+  margin-left: 0;
+}
+
+.servise_training_inf3{
+  width: 488px;
+  height: 106px;
+  display: flex;
+  align-items: center;
+}
+
+.service_training_text3{
+  width: 388px;
+  height: 106px;
+}
+
+.service_training_title3{
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: right;
+  color: #252525;
+}
+
+.service_training_desc3{
+  font-size: 18px;
+  line-height: 22px;
+  color: #252525;
+  text-align: right;
+}

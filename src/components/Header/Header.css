@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
+
+*,
+::after,
+::before{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    max-width: 1440px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: #F2E2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Assistant', sans-serif;
+    margin-top: 0;
+}
+
+.container {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*Логотип*/
+.logo {
+    width: 175px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*Навигация*/
+.nav {
+    width: 390px;
+    height: 60px;
+    margin-left: 230px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav a {
+    font-family: 'Assistant', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #8a8a8a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, font-weight 0.2s;
+}
+
+.nav a:hover {
+    color: #4b0082;
+}
+
+/* Активная страница*/
+.nav a.active {
+    font-weight: 700;
+    color: #4b0082;
+}
+
+/*Правый блок*/
+.right {
+    margin-left: 207px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cart-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #e9d5ff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+
+.cart-btn:hover {
+    background-color: #d8b4fe;
+}
+
+.cart-btn img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.auth-link {
+    margin-left: 14px;
+    font-family: 'Assistant', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #8a8a8a;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: #4b0082;
+}
