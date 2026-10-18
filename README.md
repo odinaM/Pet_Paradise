@@ -30,4 +30,4 @@ git checkout main
 git pull origin main
 
 3. Создайте ветку для следующей страницы:
-git checkout -b название ветки
+git checkout -b название ветки.
