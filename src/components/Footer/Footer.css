@@ -1,0 +1,126 @@
+*,
+::after,
+::before {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%s;
+}
+
+.footer {
+    background-image: url(../../assets/footer/background_shop.webp);
+}
+
+.footer_container {
+    display: flex;
+    gap: 55,14px;
+}
+
+.footer_info-block {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 387px;
+    height: 316px;
+    margin: 0px;
+
+}
+
+.footer_logo {
+    margin: 0px;
+}
+
+.footer_welcom {
+    width: 387px;
+    height: 66px;
+    flex-grow: 0;
+}
+
+.footer_welcom p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer_connection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 387px;
+    height: 58px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+}
+
+.footer-contact-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    width: 183.5px;
+    height: 58px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    height: 24px;
+}
+
+.footer-contact-item img {
+    margin: 0px;
+}
+
+.footer-contact-item a {
+    text-decoration: none;
+    margin: 0;
+    color: #252525;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    overflow: visible;
+}
+
+.truncated-email {
+    display: inline-block;
+    max-width: 145px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: inherit;
+    text-decoration: underline;
+    transition: max-width 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+/* Эффект при наведении*/
+.truncated-email:hover {
+    max-width: 220px;
+    overflow: visible;
+    /* Показывает скрытый хвост */
+    text-overflow: clip;
+    /* Убирает три точки */
+    letter-spacing: -0.5px;
+    /*сжатие букв*/
+}
+
+.footer_image {
+    width: 315, 73px;
+    height: 339, 35px;
+}
