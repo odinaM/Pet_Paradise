@@ -101,8 +101,9 @@ const navigate = useNavigate();
                 </div>
                 <form onSubmit={handleSubmit}>
                       <div className="input-box">
-                        <label>Full name</label>
+                       
                         <input
+                             placeholder="Full name"
                             type="text"
                             value={fullName}
                             onChange={(e) => setFullName(e.target.value)}
@@ -111,7 +112,7 @@ const navigate = useNavigate();
                        {nameErrorMessage}
                     </div>
                      <div className="input-box">
-                        <label>Phone number</label>
+                       
                         <div className="phone-wrapper">
                             <select>
                                 <option>+84</option>
@@ -119,6 +120,7 @@ const navigate = useNavigate();
                                 <option>+1</option>
                             </select>
                             <input
+                                placeholder="Phone number"
                                 type="text"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}

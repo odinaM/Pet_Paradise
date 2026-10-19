@@ -4,7 +4,6 @@
   padding: 0;
   font-family: 'Assistant', sans-serif;
   width: 100%;
-  max-width: 1440px;
 }
 
 .input-error {
@@ -22,11 +21,13 @@
     width: 590px;
     height: 770px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color:#FBF6FF;
     border-radius: 20px;
     flex-direction: column;
+    align-items: center;
+}
+.register_container{
+  display: flex;
 }
 .register_title{
     display: flex;
@@ -35,4 +36,75 @@
 .register_logo img{
     width: 57px;
     height: 57px;
+}
+.register_title_text{
+  font-size: 36px;
+  font-weight: bold;
+  color: #410075;
+}
+.register_title{
+  margin-top: 40px;
+  margin-left:120px ;
+  margin-bottom: 26px;
+}
+input{
+  width: 470px;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 31px;
+   background-color:#FBF6FF ;
+}
+.submit-btn{
+  width: 470px;
+  height: 44px;
+  background-color: #410075;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  border: none;
+}
+::placeholder{
+  font-size: 18px;
+}
+.login-text{
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+.input-box{
+  display: flex;
+  justify-content: center;
+
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+select{
+  width: 48px;
+  height: 22px;
+  border: none;
+  color:#595959 ;
+   background-color:#FBF6FF ;
+   font-size: 18px;
+}
+.phone-wrapper input{
+  border: none;
+  flex-grow: 1;
+  margin-left: 10px;
+  width: 400px;
+}
+.phone-wrapper{
+  width:470px ;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid #CCCCCC;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 31px;
+  background-color:#FBF6FF ;
 }
