@@ -1,11 +1,3 @@
-*,
-::after,
-::before {
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     padding: 0px;
     margin: 0px;
@@ -48,13 +40,17 @@ body {
     margin: 0px;
 }
 
+.footer__logo-img {
+    margin: 0px;
+}
+
 .footer__welcome {
     width: 387px;
     height: 66px;
     flex-grow: 0;
 }
 
-.footer__welcome p {
+.footer__welcome-text {
     font-size: 18px;
     font-weight: 400;
 }
@@ -92,7 +88,7 @@ body {
     overflow: visible;
 }
 
-.footer__contact-item img {
+.footer__contact-icon {
     margin: 0px;
 }
 
@@ -120,7 +116,7 @@ body {
     letter-spacing: -0.5px;
 }
 
-.footer__image img {
+.footer__image-pic {
     width: 315.73px;
     height: 339.35px;
 }
@@ -130,8 +126,6 @@ body {
     gap: 20px;
     margin: 0px;
 }
-
-/* .footer__menu-column {} */
 
 .footer__menu-title {
     font-style: normal;

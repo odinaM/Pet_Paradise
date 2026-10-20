@@ -12,11 +12,13 @@ export function Footer() {
 
         <div className="footer__info-block">
           <div className="footer__logo">
-            <img src={footer_logo} alt="Cuddle & Care Pets logo" />
+            {/* ИСПРАВЛЕНО: Добавлен класс для логотипа, чтобы не селектить через div img */}
+            <img src={footer_logo} alt="Cuddle & Care Pets logo" className="footer__logo-img" />
           </div>
 
           <div className="footer__welcome">
-            <p>
+            {/* ИСПРАВЛЕНО: Тегу p задан собственный класс-элемент */}
+            <p className="footer__welcome-text">
               Welcome to&nbsp;Cuddle &amp;&nbsp;Care Pets! We&nbsp;provide
               quality pet products, grooming, and care advice for your furry
               friends.
@@ -26,7 +28,7 @@ export function Footer() {
           <div className="footer__connection">
             <div className="footer__contact-column">
               <div className="footer__contact-item">
-                <img src={envelope} alt="" aria-hidden="true" />
+                <img src={envelope} alt="" aria-hidden="true" className="footer__contact-icon" />
                 <a
                   href="mailto:anhdansgvn@gmail.com"
                   className="footer__contact-link footer__contact-link_truncated"
@@ -35,7 +37,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="footer__contact-item">
-                <img src={phone} alt="" aria-hidden="true" />
+                <img src={phone} alt="" aria-hidden="true" className="footer__contact-icon" />
                 <a href="tel:+84938772416" className="footer__contact-link">
                   +84938772416
                 </a>
@@ -44,7 +46,7 @@ export function Footer() {
 
             <div className="footer__contact-column">
               <div className="footer__contact-item">
-                <img src={envelope} alt="" aria-hidden="true" />
+                <img src={envelope} alt="" aria-hidden="true" className="footer__contact-icon" />
                 <a
                   href="mailto:thienphuc093@gmail.com"
                   className="footer__contact-link footer__contact-link_truncated"
@@ -53,7 +55,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="footer__contact-item">
-                <img src={phone} alt="" aria-hidden="true" />
+                <img src={phone} alt="" aria-hidden="true" className="footer__contact-icon" />
                 <a href="tel:+84909403482" className="footer__contact-link">
                   +84909403482
                 </a>
@@ -62,28 +64,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer__image">
-          <img src={footer_image} alt="Friendly dog looking up" />
-        </div>
+        <img src={footer_image} alt="Friendly dog looking up" className="footer__image-pic" />
 
-        {/* последняя колонка */}
+        {/* Последняя колонка (меню) */}
         <div className="footer__menu">
           {/* Первая колонка: Service */}
           <div className="footer__menu-column">
             <h3 className="footer__menu-title">Service</h3>
             <ul className="footer__menu-list">
               <li className="footer__menu-item">
-                <a href="/pet-care" className="footer__menu-link">
+                <a href="/service" className="footer__menu-link">
                   Pet care
                 </a>
               </li>
               <li className="footer__menu-item">
-                <a href="/specialty" className="footer__menu-link">
+                <a href="/service" className="footer__menu-link">
                   Specialty Program
                 </a>
               </li>
               <li className="footer__menu-item">
-                <a href="/security" className="footer__menu-link">
+                <a href="/service" className="footer__menu-link">
                   Security Program
                 </a>
               </li>
@@ -95,12 +95,12 @@ export function Footer() {
             <h3 className="footer__menu-title">Website</h3>
             <ul className="footer__menu-list">
               <li className="footer__menu-item">
-                <a href="/about" className="footer__menu-link">
+                <a href="/" className="footer__menu-link">
                   About
                 </a>
               </li>
               <li className="footer__menu-item">
-                <a href="/services" className="footer__menu-link">
+                <a href="/service" className="footer__menu-link">
                   Service
                 </a>
               </li>

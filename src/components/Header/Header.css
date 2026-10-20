@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
 
-/* Глобальные базовые стили */
-*,
-::after,
-::before {
-    margin: 0; /* ИСПРАВЛЕНО: убрано "auto", чтобы не ломать блочную модель элементов страницы */
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .header {
     width: 100%;
     height: 120px;
