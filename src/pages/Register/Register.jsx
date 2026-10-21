@@ -99,50 +99,46 @@ const navigate = useNavigate();
                     <div className="register_title_text">REGISTER</div>
                     <div className="register_logo"><img src={union} alt="" /></div>
                 </div>
-                <form onSubmit={handleSubmit}>
-                      <div className="input-box">
-                       
-                        <input
-                             placeholder="Full name"
-                            type="text"
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            className={nameError ? 'input-error' : ''}
-                        />
-                       {nameErrorMessage}
-                    </div>
-                     <div className="input-box">
-                       
-                        <div className="phone-wrapper">
-                            <select>
-                                <option>+84</option>
-                                <option>+7</option>
-                                <option>+1</option>
-                            </select>
+                     <form onSubmit={handleSubmit}>
+                    <div className="input-box">
+                        <div className="styled-wrapper">
                             <input
-                                placeholder="Phone number"
                                 type="text"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                className={phoneError ? 'input-error' : ''}
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                className={`styled-input ${nameError ? 'input-error' : ''}`}
+                                id="fullName"
                             />
+                            <label htmlFor="fullName" className="floating-label">Full name</label>
+                        </div>
+                        {nameErrorMessage}
+                    </div>
+                    <div className="input-box">
+                        <div className="styled-wrapper">
+                            <input
+                                type="text"
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                className={`styled-input ${nameError ? 'input-error' : ''}`}
+                                id="fullName"
+                            />
+                            <label htmlFor="fullName" className="floating-label">Phone number</label>
                         </div>
                         {phoneErrorMessage}
                     </div>
-
-                    
                     <div className="input-box">
-                        <input
+                        <div className="styled-wrapper">
+                            <input
                             type="email"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className={emailError ? 'input-error' : ''}
+                            className={`styled-input ${emailError ? 'input-error' : ''}`}
                         />
+                        </div>
                         {emailErrorMessage}
                     </div>
 
-                    
                     <div className="input-box">
                         <input
                             type="password"
@@ -154,7 +150,6 @@ const navigate = useNavigate();
                         {passwordErrorMessage}
                     </div>
 
-                    
                     <div className="input-box">
                         <input
                             type="password"
@@ -165,6 +160,7 @@ const navigate = useNavigate();
                         />
                         {rePasswordErrorMessage}
                     </div>
+                    
                     <button type="submit" className="submit-btn">Submit</button>
                 </form>
                 <p className="login-text">
