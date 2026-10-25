@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Shop.css";
 import pr1 from "../../assets/shop/shop_product1.webp";
 import pr2 from "../../assets/shop/shop_product2.webp";
@@ -5,8 +6,12 @@ import pr3 from "../../assets/shop/shop_product3.webp";
 import pr4 from "../../assets/shop/shop_product4.webp";
 import pr5 from "../../assets/shop/shop_product5.webp";
 import paw from "../../assets/shop/paw.svg";
+import big_pr1 from "../../assets/shop/big_pr1.webp";
+import big_pr2 from "../../assets/shop/big_pr2.webp";
+import big_pr3 from "../../assets/shop/big_pr3.webp";
+import big_pr4 from "../../assets/shop/big_pr4.webp";
+import big_pr5 from "../../assets/shop/big_pr5.webp";
 
-// SVG-иконки для стрелок
 const ArrowLeft = () => (
   <svg
     width="24"
@@ -38,36 +43,54 @@ const ArrowRight = () => (
 );
 
 export function Shop() {
-  // Массив продуктов
   const products = [
     {
       id: 1,
-      title: "FILLET &lsquo;O&rsquo; LAKES&nbsp;&mdash; KIT CAT",
+      title: "FILLET 'O' LAKES - KIT CAT",
       img: pr1,
+      BigImg: big_pr1,
     },
-    { id: 2, title: "Encore - Cat Food", img: pr2 },
+    {
+      id: 2,
+      title: "Encore - Cat Food",
+      img: pr2,
+      BigImg: big_pr2,
+    },
     {
       id: 3,
-      title: "WELLNESS&nbsp;&mdash; SIGNATURE SELECT&nbsp;TM",
+      title: "WELLNESS - SIGNATURE SELECT TM",
       img: pr3,
-      active: true,
-    }, // Активный элемент
+      BigImg: big_pr3,
+    },
     {
       id: 4,
-      title: "ROYAL CANIN&nbsp;&mdash; CARE DIGEST SENSITIVE",
+      title: "ROYAL CANIN - CARE DIGEST SENSITIVE",
       img: pr4,
+      BigImg: big_pr4,
     },
     {
       id: 5,
-      title: "ROYAL CANIN&nbsp;&mdash; CARE DIGEST SENSITIVE",
+      title: "ROYAL CANIN - CARE DIGEST SENSITIVE",
       img: pr5,
+      BigImg: big_pr5,
     },
   ];
 
+  // индекс активного товара
+  const [activeIndex, setActiveIndex] = useState(2);
+  const activeProduct = products[activeIndex];
+
+  const prev = () => {
+    setActiveIndex((i) => (i - 1 + products.length) % products.length);
+  };
+  const next = () => {
+    setActiveIndex((i) => (i + 1) % products.length);
+  };
+
   return (
     <main className="shop">
+      {/* секция с фоном и продуктом */}
       <section className="shop__bg">
-        {/* 1. Блок с текстом */}
         <div className="shop__info">
           <h1 className="shop__title">
             The most popular products{" "}
@@ -80,27 +103,39 @@ export function Shop() {
             about!
           </p>
         </div>
+
+        {/* Большая картинка активного товара над аркой */}
+        <img
+          key={activeProduct.id}
+          src={activeProduct.BigImg || activeProduct.img}
+          alt={activeProduct.title}
+          className="shop__hero-main-image"
+        />
       </section>
 
-      {/* --- НИЖНЯЯ СЕКЦИЯ (Белая) --- */}
       <section className="shop__catalog">
         {/* Заголовок с навигацией */}
         <div className="shop__catalog-header">
-          <button className="shop__nav-btn" aria-label="Previous">
+          <button
+            className="shop__nav-btn"
+            aria-label="Previous"
+            onClick={prev}
+          >
             <ArrowLeft />
           </button>
-          <h2>WELLNESS - SIGNATURE SELECT TM</h2>
-          <button className="shop__nav-btn" aria-label="Next">
+          <h2>{activeProduct.title}</h2>
+          <button className="shop__nav-btn" aria-label="Next" onClick={next}>
             <ArrowRight />
           </button>
         </div>
 
         {/* Сетка товаров */}
         <div className="shop__grid">
-          {products.map((product) => (
+          {products.map((product, index) => (
             <div
               key={product.id}
-              className={`shop__card ${product.active ? "shop__card--active" : ""}`}
+              onClick={() => setActiveIndex(index)}
+              className={`shop__card ${index === activeIndex ? "shop__card--active" : ""}`}
             >
               <div className="shop__card-image-wrap">
                 <img src={product.img} alt={product.title} />
