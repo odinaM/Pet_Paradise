@@ -153,3 +153,7 @@ body {
     color: #595959;
     font-size: 18px;
 }
+
+.footer__menu-link:hover {
+    color: #4b0082;
+}
