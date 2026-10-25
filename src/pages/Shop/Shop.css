@@ -1,0 +1,213 @@
+.shop__bg {
+    background-image: url(../../assets/shop/shop_bg.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 697px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.shop__info {
+    max-width: 590px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.shop__title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    max-width: 100%;
+    padding-right: 60px;
+
+    font-size: 36px;
+    font-weight: 700;
+    color: #4a148c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Стили для лапки */
+.shop__paw-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    max-height: 47px;
+    height: auto;
+}
+
+
+.shop__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #252525;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+/* Визуальная часть с банкой */
+
+
+/* Изображение банки */
+.shop__hero-main-image {
+    position: relative;
+    z-index: 10;
+    width: 260px;
+    /* Ширина банки */
+    height: auto;
+    object-fit: contain;
+    transform: translateY(20px);
+    /* Немного опускаем вниз */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    /* Тень как в макете */
+}
+
+/* =========================================
+   НИЖНЯЯ СЕКЦИЯ (Каталог)
+   ========================================= */
+.shop__catalog {
+    background-color: #ffffff;
+    padding: 60px 20px;
+}
+
+.shop__catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.shop__catalog-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.shop__nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #333;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+.shop__nav-btn:hover {
+    background-color: #f3f3f3;
+}
+
+/* Сетка товаров */
+.shop__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Карточка товара */
+.shop__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    /* Прозрачная рамка по умолчанию */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Активная карточка */
+.shop__card--active {
+    border-color: #e0e0e0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Неактивные карточки */
+.shop__card:not(.shop__card--active) {
+    opacity: 0.5;
+}
+
+.shop__card:not(.shop__card--active):hover {
+    opacity: 0.8;
+}
+
+.shop__card-image-wrap {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.shop__card-image-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.shop__card-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #777;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* =========================================
+   Адаптивность (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .shop__title h1 {
+        font-size: 22px;
+    }
+
+    .shop__title p {
+        font-size: 13px;
+    }
+
+    .shop__hero-main-image {
+        width: 200px;
+    }
+
+    .shop__grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 колонки на телефоне */
+    }
+
+    .shop__catalog-header h2 {
+        font-size: 16px;
+    }
+}
