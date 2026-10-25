@@ -12,12 +12,10 @@ export function Footer() {
 
         <div className="footer__info-block">
           <div className="footer__logo">
-            {/* ИСПРАВЛЕНО: Добавлен класс для логотипа, чтобы не селектить через div img */}
             <img src={footer_logo} alt="Cuddle & Care Pets logo" className="footer__logo-img" />
           </div>
 
           <div className="footer__welcome">
-            {/* ИСПРАВЛЕНО: Тегу p задан собственный класс-элемент */}
             <p className="footer__welcome-text">
               Welcome to&nbsp;Cuddle &amp;&nbsp;Care Pets! We&nbsp;provide
               quality pet products, grooming, and care advice for your furry
