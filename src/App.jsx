@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
-import { Header }  from './components/Header/Header';
-import { Service } from './pages/Service/Service';
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+import { Service } from "./pages/Service/Service";
 
 import './App.css';
 import { Contact } from './pages/Contact/Contact';
@@ -17,8 +18,9 @@ function App() {
         <Route path="/contact"  element={<Contact/>} />
         <Route path="/register" element={<div>Register / Login</div>} />
         <Route path="/checkout" element={<div>Checkout page</div>} />
-        <Route path="/account"  element={<div>Account page</div>} />
+        <Route path="/account" element={<div>Account page</div>} />
       </Routes>
+      <Footer />
     </>
   );
 }
