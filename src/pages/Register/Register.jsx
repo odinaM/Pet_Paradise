@@ -11,15 +11,13 @@ const navigate = useNavigate();
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [rePassword, setRePassword] = useState('');
 
     // Ошибки
     const [nameError, setNameError] = useState('');
     const [phoneError, setPhoneError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    const [rePasswordError, setRePasswordError] = useState('');
-
+  
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -53,13 +51,6 @@ const navigate = useNavigate();
             setPasswordError('');
         }
 
-        if (rePassword.trim() === '') {
-            setRePasswordError('Повторите пароль');
-            hasError = true;
-        } else {
-            setRePasswordError('');
-        }
-
         if (hasError) {
             return;
         }
@@ -88,10 +79,6 @@ const navigate = useNavigate();
         passwordErrorMessage = <span className="error">{passwordError}</span>;
     }
 
-    let rePasswordErrorMessage = null;
-    if (rePasswordError) {
-        rePasswordErrorMessage = <span className="error">{rePasswordError}</span>;
-    }
     return(
         <div className='register_container'>
             <div className="register_form">
@@ -110,21 +97,22 @@ const navigate = useNavigate();
                                 id="fullName"
                             />
                             <label htmlFor="fullName" className="floating-label">Full name</label>
+                            {nameErrorMessage}
                         </div>
-                        {nameErrorMessage}
+                        
                     </div>
                     <div className="input-box">
                         <div className="styled-wrapper">
                             <input
-                                type="text"
-                                value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
-                                className={`styled-input ${nameError ? 'input-error' : ''}`}
-                                id="fullName"
+                                type="tel"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                className={`styled-input ${phoneError ? 'input-error' : ''}`}
+                                id="phoneNumber"
                             />
-                            <label htmlFor="fullName" className="floating-label">Phone number</label>
+                            <label htmlFor="phoneNumber" className="floating-label">Phone number</label>
+                            {phoneErrorMessage}
                         </div>
-                        {phoneErrorMessage}
                     </div>
                     <div className="input-box">
                         <div className="styled-wrapper">
@@ -135,30 +123,21 @@ const navigate = useNavigate();
                             onChange={(e) => setEmail(e.target.value)}
                             className={`styled-input ${emailError ? 'input-error' : ''}`}
                         />
-                        </div>
                         {emailErrorMessage}
+                        </div>
                     </div>
 
                     <div className="input-box">
-                        <input
+                        <div className="styled-wrapper">
+                            <input
                             type="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className={passwordError ? 'input-error' : ''}
+                            className={`styled-input ${passwordError ? 'input-error' : ''}`}
                         />
                         {passwordErrorMessage}
-                    </div>
-
-                    <div className="input-box">
-                        <input
-                            type="password"
-                            placeholder="Re-password"
-                            value={rePassword}
-                            onChange={(e) => setRePassword(e.target.value)}
-                            className={rePasswordError ? 'input-error' : ''}
-                        />
-                        {rePasswordErrorMessage}
+                        </div>
                     </div>
                     
                     <button type="submit" className="submit-btn">Submit</button>
@@ -166,6 +145,14 @@ const navigate = useNavigate();
                 <p className="login-text">
                     Already have account? <a href="/login">Login Here</a>
                 </p>
+            </div>
+            <div className="register_info">
+                <p className="register_info_text1">Become a member today and help protect animals!</p>
+                <div className="register_info_exlusive-block">
+                    <p className="exclusive_text-1">Member Benefits: Exclusive Discounts, Rewards</p>
+                    <p className="exclusive_text-2">Exclusive Discounts: Enjoy special pricing on pet food, toys, and accessories.</p>
+                    <div className="exclusive_text-3">Early Access: Be the first to know about new products and promotions.</div>
+                </div>
             </div>
         </div>
     );

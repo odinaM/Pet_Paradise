@@ -30,10 +30,12 @@ body{
     background-color:#FBF6FF;
     border-radius: 20px;
     flex-direction: column;
-    align-items: center;
 }
 .register_container{
   display: flex;
+  margin-top: 7px;
+  flex-direction: row;
+  gap: 20px;
 }
 .register_title{
     display: flex;
@@ -42,6 +44,7 @@ body{
 .register_logo img{
     width: 57px;
     height: 57px;
+     margin-left: 52px;
 }
 .register_title_text{
   font-size: 36px;
@@ -50,8 +53,8 @@ body{
 }
 .register_title{
   margin-top: 40px;
-  margin-left:120px ;
-  margin-bottom: 26px;
+  margin-left:60px ;
+  margin-bottom: 57px;
 }
 input{
   width: 470px;
@@ -69,6 +72,7 @@ input{
   font-size: 18px;
   color: white;
   border: none;
+  margin-top: 79px;
 }
 ::placeholder{
   font-size: 18px;
@@ -158,9 +162,6 @@ select{
     transition: color 0.3s ease;
 }
 
-.styled-wrapper:focus-within .floating-label {
-    color: #410075;
-}
 
 .select-container {
     display: flex;
@@ -188,8 +189,51 @@ select{
     margin-left: -12px;
     pointer-events: none;
 }
-
-
 .phone-input {
     padding-left: 10px !important; 
+}
+/* стили register_info*/
+.register_info{
+  width: 590px;
+  height: 770px;
+  border-radius: 20px;
+  background-color: #A1BE97;
+  background-image: url(../../assets/img/register_info.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.register_info_text1{
+  width: 350px;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.register_info_exlusive-block{
+  width: 508px;
+  height: 186px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 400px;
+  background-color: #2525254D;
+  backdrop-filter: blur(30px);
+  margin-left: 41px;
+  color: #FFFFFF;
+}
+.exclusive_text-1{
+  font-size: 20px ;
+  font-weight: bold;
+  margin:20px 0px 10px 20px;
+}
+.exclusive_text-2{
+  font-size: 18px;
+  margin-left: 20px;
+  margin-bottom:20px ;
+}
+.exclusive_text-3{
+   font-size: 18px;
+  margin-left: 20px;
 }
