@@ -12,11 +12,7 @@ export function Footer() {
 
         <div className="footer__info-block">
           <div className="footer__logo">
-            <img
-              src={footer_logo}
-              alt="Cuddle & Care Pets logo"
-              className="footer__logo-img"
-            />
+            <img src={footer_logo} alt="Cuddle & Care Pets logo" className="footer__logo-img" />
           </div>
 
           <div className="footer__welcome">
