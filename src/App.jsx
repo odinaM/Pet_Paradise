@@ -8,6 +8,7 @@ import { Register } from './pages/Register/Register';
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { Service } from "./pages/Service/Service";
+import { Shop } from "./pages/Shop/Shop";
 main
 
 import './App.css';
