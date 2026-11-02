@@ -1,7 +1,7 @@
-import './Header.css';
-import logo from '../../assets/img/Logo.png';
-import korzina from '../../assets/img/korzina.png';
-import { NavLink } from 'react-router-dom';
+import "./Header.css";
+import logo from "../../assets/img/Logo.svg";
+import korzina from "../../assets/img/korzina.svg";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
   return (
@@ -16,27 +16,35 @@ export function Header() {
 
         {/* Элемент навигации (контейнер для ссылок) */}
         <nav className="header__nav">
-          <NavLink 
-            to="/" 
-            className={({isActive}) => `header__nav-link ${isActive ? 'header__nav-link_active' : ''}`}
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `header__nav-link ${isActive ? "header__nav-link_active" : ""}`
+            }
           >
             About
           </NavLink>
-          <NavLink 
-            to="/service" 
-            className={({isActive}) => `header__nav-link ${isActive ? 'header__nav-link_active' : ''}`}
+          <NavLink
+            to="/service"
+            className={({ isActive }) =>
+              `header__nav-link ${isActive ? "header__nav-link_active" : ""}`
+            }
           >
             Service
           </NavLink>
-          <NavLink 
-            to="/shop" 
-            className={({isActive}) => `header__nav-link ${isActive ? 'header__nav-link_active' : ''}`}
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              `header__nav-link ${isActive ? "header__nav-link_active" : ""}`
+            }
           >
             Shop
           </NavLink>
-          <NavLink 
-            to="/contact" 
-            className={({isActive}) => `header__nav-link ${isActive ? 'header__nav-link_active' : ''}`}
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `header__nav-link ${isActive ? "header__nav-link_active" : ""}`
+            }
           >
             Contact
           </NavLink>
@@ -47,9 +55,10 @@ export function Header() {
           <button className="header__cart-btn" aria-label="Корзина">
             <img src={korzina} alt="korzina" className="header__cart-icon" />
           </button>
-          <a href="/register" className="header__auth-link">Register / Login</a>
+          <a href="/register" className="header__auth-link">
+            Register / Login
+          </a>
         </div>
-
       </div>
     </header>
   );
