@@ -1,6 +1,5 @@
 .service {
     width: 100%;
-    max-width: 1440px;
     margin: 0 auto;
     font-family: 'Assistant', sans-serif;
 }
@@ -8,12 +7,11 @@
 /*Первая секция*/
 .section_service__hero {
     width: 100%;
-    height: 685px;
+    min-height: 685px;
     display: flex;
     justify-content: center;
     background-image: url('../../assets/img/fonService.png');
     background-size: cover;
-    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 50px;
@@ -214,10 +212,12 @@
 /* 4 section */
 .section_service_training {
     width: 100%;
-    height: 1930px;
     background-image: url(../../assets/img/fon_section4\ .png);
     margin-top: 50px;
     padding-top: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
 }
 
 .service_training_allBlocks {
