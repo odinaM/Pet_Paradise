@@ -15,7 +15,7 @@
   margin-bottom: 100px;
 }
 
-.hero_contact{
+.hero_contact {
     width: 1200px;
     height: 562px;
     margin: 0 auto;
@@ -24,14 +24,14 @@
     align-items: center;
 }
 
-.contact_with_us{
+.contact_with_us {
     width: 488px;
     height: 374px;
     display: block;
     margin-right: 60px;
 }
 
-.block_title_contact{
+.block_title_contact {
     width: 295px;
     height: 54px;
     display: flex;
@@ -42,7 +42,7 @@
     margin-bottom: 40px;
 }
 
-.title_contact{
+.title_contact {
     width: 225px;
     font-size: 28px;
     font-weight: bold;
@@ -50,45 +50,90 @@
     color: #410075;
 }
 
-.dop_paw_contact{
+.dop_paw_contact {
     width: 54px;
     height: auto;
 }
 
-.block_inputs_contact{
+.block_inputs_contact {
     width: 488px;
     height: 196px;
     display: block;
     margin-bottom: 40px;
 }
 
+/* --- НОВЫЕ СТИЛИ ДЛЯ ИНПУТОВ С ПЛАВАЮЩИМ ТЕКСТОМ --- */
+
+/* Обертка для инпута и лейбла */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* Отступ между полями (заменил старые margin-bottom) */
+}
+
+/* Общие стили для самих инпутов */
 .inp_contact_first_name,
 .inp_contact_Phone,
-.inp_contact_email{
+.inp_contact_email {
     width: 100%;
     max-width: 488px;
     height: 52px;
     border-radius: 10px;
     border: 1px solid #CCCCCC;
-    color: #999999;
-    padding-left: 20px;
+    padding: 0 20px;
     font-size: 18px;
     line-height: 22px;
+    color: #252525; /* Цвет вводимого текста */
+    background-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
 }
 
-.inp_contact_first_name,
-.inp_contact_Phone{
-    margin-bottom: 20px;
+/* Эффект при клике на инпут (фокус) */
+.inp_contact_first_name:focus,
+.inp_contact_Phone:focus,
+.inp_contact_email:focus {
+    border-color: #410075;
 }
 
-.block_buttons_contact{
+/* Стили для текста-подсказки (label) по умолчанию */
+.input-group label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #999999;
+    background-color: #FFFFFF; /* Фон должен совпадать с фоном страницы */
+    padding: 0 5px;
+    pointer-events: none; /* Клик проходит сквозь текст в инпут */
+    transition: all 0.2s ease;
+}
+
+/* МАГИЯ: Когда инпут в фокусе ИЛИ в нем есть текст */
+.inp_contact_first_name:focus ~ label,
+.inp_contact_first_name:not(:placeholder-shown) ~ label,
+.inp_contact_Phone:focus ~ label,
+.inp_contact_Phone:not(:placeholder-shown) ~ label,
+.inp_contact_email:focus ~ label,
+.inp_contact_email:not(:placeholder-shown) ~ label {
+    top: 0; /* Поднимаем наверх на линию рамки */
+    font-size: 14px; /* Уменьшаем размер шрифта */
+    color: #410075; /* Делаем фиолетовым */
+    font-weight: 600;
+}
+
+/* --- КОНЕЦ СТИЛЕЙ ДЛЯ ИНПУТОВ --- */
+
+
+.block_buttons_contact {
     width: 250px;
     height: 44px;
-    bottom: 0;
     margin-left: 0;
 }
 
-.btn_submit_contact{
+.btn_submit_contact {
     width: 120px;
     height: 44px;
     background-color: #410075;
@@ -98,9 +143,10 @@
     font-weight: 400;
     border: none;
     margin-right: 10px;
+    cursor: pointer;
 }
 
-.btn_refresh_contact{
+.btn_refresh_contact {
     width: 120px;
     height: 44px;
     background-color: #FFFFFF;
@@ -108,7 +154,8 @@
     border-radius: 5px;
     color: #727272;
     font-size: 18px;
-    font-weight: SemiBold;
+    font-weight: 600; /* Заменил SemiBold на валидное значение */
+    cursor: pointer;
 }
 
 .right_block_contact {
@@ -124,6 +171,7 @@
     padding-bottom: 38px;
     padding-left: 30px;
     padding-right: 30px;
+    box-sizing: border-box;
 }
 
 .right_block_contact > img {
@@ -136,5 +184,27 @@
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
-    width: 590px;
+    width: 100%; 
+    max-width: 590px;
+}
+
+
+.inp_contact_first_name:-webkit-autofill,
+.inp_contact_first_name:-webkit-autofill:hover, 
+.inp_contact_first_name:-webkit-autofill:focus,
+.inp_contact_Phone:-webkit-autofill,
+.inp_contact_Phone:-webkit-autofill:hover,
+.inp_contact_Phone:-webkit-autofill:focus,
+.inp_contact_email:-webkit-autofill,
+.inp_contact_email:-webkit-autofill:hover,
+.inp_contact_email:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important; 
+    -webkit-text-fill-color: #252525 !important; 
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.inp_contact_first_name:focus,
+.inp_contact_Phone:focus,
+.inp_contact_email:focus {
+    background-color: transparent !important;
 }

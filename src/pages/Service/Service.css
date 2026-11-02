@@ -8,6 +8,7 @@
 /*Первая секция*/
 .section_service__hero {
     width: 100%;
+    max-width: 1440px;
     height: 685px;
     display: flex;
     justify-content: center;
@@ -218,6 +219,7 @@
     background-image: url(../../assets/img/fon_section4\ .png);
     margin-top: 50px;
     padding-top: 32px;
+    margin-bottom: 100px;
 }
 
 .service_training_allBlocks {
