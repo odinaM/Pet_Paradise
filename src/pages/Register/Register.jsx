@@ -284,3 +284,4 @@ const [step, setStep] = useState(1);
         </div>
     );
 }
+//проверка
