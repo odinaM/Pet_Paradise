@@ -273,6 +273,7 @@
     position: relative;
     width: 100%;
 }
+
 .summer-sale__pets {
     position: absolute;
     top: 0;
@@ -308,7 +309,97 @@
     display: block;
 }
 
+/* блок с продуктами */
+.pet-food-products {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
 
+.pet-food-product {}
+
+.pet-food-product__bg {
+    position: relative;
+    width: 1200px;
+    height: 200px;
+    margin: 37px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/shop/food_bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 10px;
+}
+
+.pet-food-product__dog {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    z-index: 2;
+    width: 450px;
+    max-height: 304px;
+}
+
+.pet-food-product__info {
+    width: 284px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 50px;
+}
+
+.pet-food-product__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    color: #252525;
+}
+
+.pet-food-product__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #595959;
+}
+
+/* Корма справа */
+.pet-food-product__foods {
+    position: absolute;
+    right: 30px;
+
+    bottom: 0;
+    height: 120%;
+    display: flex;
+    align-items: flex-end;
+    z-index: 3;
+}
+
+.pet-food-product__food-img {
+    height: 80%;
+    width: auto;
+    margin-bottom: -35px;
+    object-fit: contain;
+}
+
+.pet-food-product__food-img--back {
+    margin-right: -95px;
+    z-index: 5;
+}
+
+.pet-food-product__food-img--front {
+    z-index: 2;
+    height: 90%;
+}
 
 @media (max-width: 768px) {
     .shop__bg {

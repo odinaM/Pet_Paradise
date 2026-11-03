@@ -16,6 +16,8 @@ import pet_card2 from "../../assets/shop/shop_card2.svg";
 import pet_card3 from "../../assets/shop/shop_card3.svg";
 import bg_pet from "../../assets/shop/bg_pet.webp";
 import summer_pet from "../../assets/shop/summer_pet.webp";
+import food_dog from "../../assets/shop/food_dog.webp";
+import food_bg from "../../assets/shop/food_bg.webp";
 
 const ArrowLeft = () => (
   <svg
@@ -210,6 +212,40 @@ export function Shop() {
               alt="summer_pet poster"
               className="summer-sale__bg-img"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="pet-food-products">
+        {/* первый блок с картинками */}
+        <div className="pet-food-product">
+          <div className="pet-food-product__bg">
+            {/* собака */}
+            <img
+              src={food_dog}
+              alt="Summer sale dog"
+              className="pet-food-product__dog"
+            />
+            {/* текст */}
+            <div className="pet-food-product__info">
+              <h3 className="pet-food-product__title">Pet food products</h3>
+              <p className="pet-food-product__text">
+                Buy products for free pet checkup
+              </p>
+            </div>
+            {/* корм */}
+            <div className="pet-food-product__foods">
+              <img
+                src={big_pr5}
+                alt="Food 1"
+                className="pet-food-product__food-img pet-food-product__food-img--back"
+              />
+              <img
+                src={big_pr4}
+                alt="Food 2"
+                className="pet-food-product__food-img pet-food-product__food-img--front"
+              />
+            </div>
           </div>
         </div>
       </section>
