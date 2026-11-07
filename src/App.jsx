@@ -10,6 +10,7 @@ import { Contact } from "./pages/Contact/Contact";
 
 import "./App.css";
 
+
 function App() {
   return (
     <>

@@ -2,6 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Assistant', sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .input-error {
@@ -211,7 +219,6 @@ select {
 .styled-input.input-error+.floating-label {
   color: #d9534f;
 }
-
 
 .select-container {
   display: flex;
