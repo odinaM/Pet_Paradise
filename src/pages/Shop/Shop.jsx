@@ -11,6 +11,13 @@ import big_pr2 from "../../assets/shop/big_pr2.webp";
 import big_pr3 from "../../assets/shop/big_pr3.webp";
 import big_pr4 from "../../assets/shop/big_pr4.webp";
 import big_pr5 from "../../assets/shop/big_pr5.webp";
+import pet_card1 from "../../assets/shop/shop_card1.svg";
+import pet_card2 from "../../assets/shop/shop_card2.svg";
+import pet_card3 from "../../assets/shop/shop_card3.svg";
+import bg_pet from "../../assets/shop/bg_pet.webp";
+import summer_pet from "../../assets/shop/summer_pet.webp";
+import food_dog from "../../assets/shop/food_dog.webp";
+import food_bg from "../../assets/shop/food_bg.webp";
 
 const ArrowLeft = () => (
   <svg
@@ -93,7 +100,7 @@ export function Shop() {
       <section className="shop__bg">
         <div className="shop__info">
           <h1 className="shop__title">
-            The most popular products{" "}
+            The most popular product
             <img src={paw} alt="little paw" className="shop__paw-icon" />
           </h1>
           <p className="shop__text">
@@ -145,7 +152,103 @@ export function Shop() {
           ))}
         </div>
       </section>
+
+      <section className="pet-nutrition">
+        <div className="pet-nutrition__header">
+          <h1 className="pet-nutrition__title pet-nutrition__title--main">
+            Tailored Nutrition
+            <img src={paw} alt="little paw" className="pet-nutrition__icon" />
+          </h1>
+          <p className="pet-nutrition__title pet-nutrition__title--sub">
+            for Your Pet's Health
+          </p>
+        </div>
+
+        {/* секция с карточками */}
+        <div className="pet-nutrition__grid">
+          {/* карточка 1 */}
+          <div className="pet-nutrition__card card">
+            <div className="card__icon-wrapper">
+              <img src={pet_card1} alt="love" />
+            </div>
+            <h3 className="card__title">Nutrition and Health</h3>
+            <p className="card__text">
+              Proper nutrition is&nbsp;key to&nbsp;your pet&rsquo;s health,
+              supporting growth, energy, and overall well-being.
+            </p>
+          </div>
+          {/* карточка 2 */}
+          <div className="pet-nutrition__card card">
+            <div className="card__icon-wrapper">
+              <img src={pet_card2} alt="love" />
+            </div>
+            <h3 className="card__title">Custom Diets</h3>
+            <p className="card__text">
+              Each pet has unique dietary needs. Tailoring their diet ensures
+              they get essential nutrients.
+            </p>
+          </div>
+          {/* карточка 3 */}
+          <div className="pet-nutrition__card card">
+            <div className="card__icon-wrapper">
+              <img src={pet_card3} alt="love" />
+            </div>
+            <h3 className="card__title">Expert Guidance</h3>
+            <p className="card__text">
+              Professional advice is&nbsp;crucial for managing your pet&rsquo;s
+              diet, ensuring they stay healthy and thrive.
+            </p>
+          </div>
+        </div>
+        {/* сложная картинка */}
+        <div className="summer-sale">
+          <div className="summer-sale__pets">
+            <img src={bg_pet} alt="pet cat dog" className="summer-sale__pet" />
+          </div>
+
+          <div className="summer-sale__bg">
+            <img
+              src={summer_pet}
+              alt="summer_pet poster"
+              className="summer-sale__bg-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="pet-food-products">
+        {/* первый блок с картинками */}
+        <div className="pet-food-product">
+          <div className="pet-food-product__bg">
+            {/* собака */}
+            <img
+              src={food_dog}
+              alt="Summer sale dog"
+              className="pet-food-product__dog"
+            />
+            {/* текст */}
+            <div className="pet-food-product__info">
+              <h3 className="pet-food-product__title">Pet food products</h3>
+              <p className="pet-food-product__text">
+                Buy products for free pet checkup
+              </p>
+            </div>
+            {/* корм */}
+            <div className="pet-food-product__foods">
+              <img
+                src={big_pr5}
+                alt="Food 1"
+                className="pet-food-product__food-img pet-food-product__food-img--back"
+              />
+              <img
+                src={big_pr4}
+                alt="Food 2"
+                className="pet-food-product__food-img pet-food-product__food-img--front"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
-// пусть работает!!
