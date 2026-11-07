@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProductList from "../../components/ProductList/ProductList";
 import "./Shop.css";
 import pr1 from "../../assets/shop/shop_product1.webp";
 import pr2 from "../../assets/shop/shop_product2.webp";
@@ -17,7 +18,6 @@ import pet_card3 from "../../assets/shop/shop_card3.svg";
 import bg_pet from "../../assets/shop/bg_pet.webp";
 import summer_pet from "../../assets/shop/summer_pet.webp";
 import food_dog from "../../assets/shop/food_dog.webp";
-import food_bg from "../../assets/shop/food_bg.webp";
 
 const ArrowLeft = () => (
   <svg
@@ -155,10 +155,10 @@ export function Shop() {
 
       <section className="pet-nutrition">
         <div className="pet-nutrition__header">
-          <h1 className="pet-nutrition__title pet-nutrition__title--main">
+          <h2 className="pet-nutrition__title pet-nutrition__title--main">
             Tailored Nutrition
             <img src={paw} alt="little paw" className="pet-nutrition__icon" />
-          </h1>
+          </h2>
           <p className="pet-nutrition__title pet-nutrition__title--sub">
             for Your Pet's Health
           </p>
@@ -248,6 +248,10 @@ export function Shop() {
             </div>
           </div>
         </div>
+      </section>
+      {/* товары из бэка */}
+      <section className="shop__dynamic-products">
+        <ProductList />
       </section>
     </main>
   );
