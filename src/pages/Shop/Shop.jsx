@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProductList from "../../components/ProductList/ProductList";
 import "./Shop.css";
 import pr1 from "../../assets/shop/shop_product1.webp";
 import pr2 from "../../assets/shop/shop_product2.webp";
@@ -17,7 +18,14 @@ import pet_card3 from "../../assets/shop/shop_card3.svg";
 import bg_pet from "../../assets/shop/bg_pet.webp";
 import summer_pet from "../../assets/shop/summer_pet.webp";
 import food_dog from "../../assets/shop/food_dog.webp";
-import food_bg from "../../assets/shop/food_bg.webp";
+import to1 from "../../assets/shop/toy1.png";
+import to2 from "../../assets/shop/toy2.png";
+import to3 from "../../assets/shop/toy3.png";
+import lemon1 from "../../assets/shop/lemon1.svg";
+import lemon2 from "../../assets/shop/lemon2.svg";
+import list1 from "../../assets/shop/list1.svg";
+import list2 from "../../assets/shop/list2.svg";
+import list3 from "../../assets/shop/list3.svg";
 
 const ArrowLeft = () => (
   <svg
@@ -155,10 +163,10 @@ export function Shop() {
 
       <section className="pet-nutrition">
         <div className="pet-nutrition__header">
-          <h1 className="pet-nutrition__title pet-nutrition__title--main">
+          <h2 className="pet-nutrition__title pet-nutrition__title--main">
             Tailored Nutrition
             <img src={paw} alt="little paw" className="pet-nutrition__icon" />
-          </h1>
+          </h2>
           <p className="pet-nutrition__title pet-nutrition__title--sub">
             for Your Pet's Health
           </p>
@@ -212,6 +220,27 @@ export function Shop() {
               alt="summer_pet poster"
               className="summer-sale__bg-img"
             />
+            <img
+              src={lemon1}
+              alt="little lemon"
+              className="decor decor--lemon-left"
+            />
+            <img
+              src={lemon2}
+              alt="big lemon"
+              className="decor decor--lemon-right"
+            />
+            <img src={list1} alt="list" className="decor decor--leaf-top" />
+            <img
+              src={list2}
+              alt="little list"
+              className="decor decor--leaf-bottom"
+            />
+            <img
+              src={list3}
+              alt="big list"
+              className="decor decor--leaf-flying"
+            />
           </div>
         </div>
       </section>
@@ -248,6 +277,23 @@ export function Shop() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* товары из бэка */}
+      <section className="shop__dynamic-products">
+        <ProductList title="PET FOOD" categoryId={[1, 2]} />
+        <div className="shop__toy">
+          <div className="shop__toy-element">
+            <img src={to3} alt="toy" className="toy-img toy-img--left" />
+            <img src={to1} alt="toy" className="toy-img toy-img--top" />
+            <img src={to2} alt="toy" className="toy-img toy-img--right" />
+          </div>
+          <p className="shop__toy-text">
+            Treat your pet to&nbsp;some fun&mdash;shop our selection
+            of&nbsp;toys and keep them happy and active!
+          </p>
+        </div>
+        <ProductList title="Pet TOY" categoryId={3} />
       </section>
     </main>
   );

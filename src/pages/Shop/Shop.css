@@ -309,6 +309,50 @@
     display: block;
 }
 
+.summer-sale__bg {
+    position: relative;
+}
+
+.decor {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Лимон слева вверху */
+.decor--lemon-left {
+    top: 30%;
+    left: 10%;
+    width: 170px;
+    height: 160px;
+}
+
+/* Лимон справа внизу */
+.decor--lemon-right {
+    top: 50%;
+    right: 5%;
+}
+
+/* Большой лист сверху */
+.decor--leaf-top {
+    top: 5%;
+    left: 22%;
+}
+
+/* Маленький лист снизу слева */
+.decor--leaf-bottom {
+    bottom: 10%;
+    left: 12%;
+}
+
+/* Летящий лист справа */
+.decor--leaf-flying {
+    top: 77%;
+    right: 15%;
+    width: 407px;
+    height: 371px;
+}
+
 /* блок с продуктами */
 .pet-food-products {
     margin: 0 auto;
