@@ -26,7 +26,12 @@ export function Footer() {
           <div className="footer__connection">
             <div className="footer__contact-column">
               <div className="footer__contact-item">
-                <img src={envelope} alt="" aria-hidden="true" className="footer__contact-icon" />
+                <img
+                  src={envelope}
+                  alt=""
+                  aria-hidden="true"
+                  className="footer__contact-icon"
+                />
                 <a
                   href="mailto:anhdansgvn@gmail.com"
                   className="footer__contact-link footer__contact-link_truncated"
@@ -35,7 +40,12 @@ export function Footer() {
                 </a>
               </div>
               <div className="footer__contact-item">
-                <img src={phone} alt="" aria-hidden="true" className="footer__contact-icon" />
+                <img
+                  src={phone}
+                  alt=""
+                  aria-hidden="true"
+                  className="footer__contact-icon"
+                />
                 <a href="tel:+84938772416" className="footer__contact-link">
                   +84938772416
                 </a>
@@ -44,7 +54,12 @@ export function Footer() {
 
             <div className="footer__contact-column">
               <div className="footer__contact-item">
-                <img src={envelope} alt="" aria-hidden="true" className="footer__contact-icon" />
+                <img
+                  src={envelope}
+                  alt=""
+                  aria-hidden="true"
+                  className="footer__contact-icon"
+                />
                 <a
                   href="mailto:thienphuc093@gmail.com"
                   className="footer__contact-link footer__contact-link_truncated"
@@ -53,7 +68,12 @@ export function Footer() {
                 </a>
               </div>
               <div className="footer__contact-item">
-                <img src={phone} alt="" aria-hidden="true" className="footer__contact-icon" />
+                <img
+                  src={phone}
+                  alt=""
+                  aria-hidden="true"
+                  className="footer__contact-icon"
+                />
                 <a href="tel:+84909403482" className="footer__contact-link">
                   +84909403482
                 </a>
@@ -62,7 +82,11 @@ export function Footer() {
           </div>
         </div>
 
-        <img src={footer_image} alt="Friendly dog looking up" className="footer__image-pic" />
+        <img
+          src={footer_image}
+          alt="Friendly dog looking up"
+          className="footer__image-pic"
+        />
 
         {/* Последняя колонка (меню) */}
         <div className="footer__menu">
