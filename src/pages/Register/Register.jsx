@@ -108,7 +108,7 @@ const [step, setStep] = useState(1);
             return;
         }
 
-        navigate('/home');
+        navigate('/about');
     };
     return(
         <div className='register_container'>
