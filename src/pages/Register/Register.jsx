@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
 import union from '../../assets/img/union.png';
+import { Link } from 'react-router-dom';
 
 export function Register(){
 const navigate = useNavigate();
@@ -269,7 +270,7 @@ const [step, setStep] = useState(1);
                      
                 {step === 1 && (
                     <p className="login-text">
-                        Already have account? <a href="/login">Login Here</a>
+                        Already have account? <Link to="/login">Login Here</Link>
                     </p>
                 )}
             </div>
