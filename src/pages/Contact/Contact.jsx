@@ -19,12 +19,10 @@ export function Contact() {
         if (errors.phone) setErrors(prev => ({ ...prev, phone: '' }));
     };
 
-
     const handleNameChange = (e) => {
         setName(e.target.value);
         if (errors.name) setErrors(prev => ({ ...prev, name: '' }));
     };
-
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -35,19 +33,19 @@ export function Contact() {
         const newErrors = { name: '', phone: '', email: '' };
 
         if (!name.trim()) {
-            newErrors.name = 'Пожалуйста, введите имя';
+            newErrors.name = 'Enter your name';
         }
 
         if (!phone.trim()) {
-            newErrors.phone = 'Пожалуйста, введите номер телефона';
+            newErrors.phone = 'Enter your phone';
         } else if (!phoneRegex.test(phone.trim())) {
-            newErrors.phone = 'Введите корректный номер (например, +7 999 123-45-67)';
+            newErrors.phone = 'Invalid phone number';
         }
 
         if (!email.trim()) {
-            newErrors.email = 'Пожалуйста, введите email';
+            newErrors.email = 'Enter your email';
         } else if (!emailRegex.test(email.trim())) {
-            newErrors.email = 'Введите корректный email (например, name@example.com)';
+            newErrors.email = 'Invalid email';
         }
 
         setErrors(newErrors);
@@ -56,15 +54,10 @@ export function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
         if (!validate()) return;
 
         alert('Форма успешно отправлена!');
-
-        setName('');
-        setPhone('');
-        setEmail('');
-        setErrors({ name: '', phone: '', email: '' });
+        handleRefresh();
     };
 
     const handleRefresh = () => {
@@ -88,44 +81,50 @@ export function Contact() {
                             <div className="block_inputs_contact">
                                 {/* Name */}
                                 <div className="input-group">
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        className={`inp_contact_first_name ${errors.name ? 'input_error' : ''}`} 
-                                        placeholder=" " 
-                                        value={name} 
-                                        onChange={handleNameChange}
-                                    />
-                                    <label htmlFor="name">Full Name</label>
-                                    {errors.name && <span className="error_msg">{errors.name}</span>}
+                                    <div className={`input-wrapper ${errors.name ? 'input_error' : ''}`}>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            className="inp_contact" 
+                                            placeholder=" " // Оставляем, чтобы работал фокус
+                                            value={name} 
+                                            onChange={handleNameChange}
+                                        />
+                                        <label htmlFor="name" className="floating-label">Full name</label>
+                                        {errors.name && <span className="error-inline">{errors.name}</span>}
+                                    </div>
                                 </div>
 
                                 {/* Phone */}
                                 <div className="input-group">
-                                    <input 
-                                        type="tel" 
-                                        id="phone" 
-                                        className={`inp_contact_Phone ${errors.phone ? 'input_error' : ''}`} 
-                                        placeholder=" " 
-                                        value={phone} 
-                                        onChange={handlePhoneChange}
-                                    />
-                                    <label htmlFor="phone">Phone Number</label>
-                                    {errors.phone && <span className="error_msg">{errors.phone}</span>}
+                                    <div className={`input-wrapper ${errors.phone ? 'input_error' : ''}`}>
+                                        <input 
+                                            type="tel" 
+                                            id="phone" 
+                                            className="inp_contact" 
+                                            placeholder=" " 
+                                            value={phone} 
+                                            onChange={handlePhoneChange}
+                                        />
+                                        <label htmlFor="phone" className="floating-label">Phone number</label>
+                                        {errors.phone && <span className="error-inline">{errors.phone}</span>}
+                                    </div>
                                 </div>
 
                                 {/* Email */}
                                 <div className="input-group">
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        className={`inp_contact_email ${errors.email ? 'input_error' : ''}`} 
-                                        placeholder=" " 
-                                        value={email} 
-                                        onChange={handleEmailChange}
-                                    />
-                                    <label htmlFor="email">Email</label>
-                                    {errors.email && <span className="error_msg">{errors.email}</span>}
+                                    <div className={`input-wrapper ${errors.email ? 'input_error' : ''}`}>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            className="inp_contact" 
+                                            placeholder=" " 
+                                            value={email} 
+                                            onChange={handleEmailChange}
+                                        />
+                                        <label htmlFor="email" className="floating-label">Email</label>
+                                        {errors.email && <span className="error-inline">{errors.email}</span>}
+                                    </div>
                                 </div>
                             </div>
 
