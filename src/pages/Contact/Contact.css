@@ -1,0 +1,140 @@
+/*Обёртка страницы*/
+.contact {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Assistant', sans-serif;
+}
+
+/*Первая секция*/
+.section_contact {
+  width: 100%;
+  height: 623px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.hero_contact{
+    width: 1200px;
+    height: 562px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.contact_with_us{
+    width: 488px;
+    height: 374px;
+    display: block;
+    margin-right: 60px;
+}
+
+.block_title_contact{
+    width: 295px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+
+.title_contact{
+    width: 225px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 36px;
+    color: #410075;
+}
+
+.dop_paw_contact{
+    width: 54px;
+    height: auto;
+}
+
+.block_inputs_contact{
+    width: 488px;
+    height: 196px;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.inp_contact_first_name,
+.inp_contact_Phone,
+.inp_contact_email{
+    width: 100%;
+    max-width: 488px;
+    height: 52px;
+    border-radius: 10px;
+    border: 1px solid #CCCCCC;
+    color: #999999;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.inp_contact_first_name,
+.inp_contact_Phone{
+    margin-bottom: 20px;
+}
+
+.block_buttons_contact{
+    width: 250px;
+    height: 44px;
+    bottom: 0;
+    margin-left: 0;
+}
+
+.btn_submit_contact{
+    width: 120px;
+    height: 44px;
+    background-color: #410075;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    margin-right: 10px;
+}
+
+.btn_refresh_contact{
+    width: 120px;
+    height: 44px;
+    background-color: #FFFFFF;
+    border: 1px solid #727272;
+    border-radius: 5px;
+    color: #727272;
+    font-size: 18px;
+    font-weight: SemiBold;
+}
+
+.right_block_contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 652px;
+    height: 562px;
+    border-radius: 20px;
+    background-image: url(../../assets/img/cat_contact.webp);
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 38px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.right_block_contact > img {
+    width: 87.5px;
+    height: auto;
+    margin-left: 0;
+}
+
+.text_contact {
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    width: 590px;
+}
