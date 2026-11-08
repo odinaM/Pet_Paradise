@@ -252,6 +252,7 @@ export function Shop() {
       {/* товары из бэка */}
       <section className="shop__dynamic-products">
         <ProductList />
+        <ProductList title="Pet TOY" categoryId={3} />
       </section>
     </main>
   );
