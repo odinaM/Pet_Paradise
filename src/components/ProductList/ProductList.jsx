@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../ProductList/ProductList.css";
 import star from "../../assets/productlist/star.svg";
 import paw from "../../assets/shop/paw.svg";
-// Строка с импортом korzina УДАЛЕНА, так как мы используем SVG-код
 
 const ProductList = ({ categoryId, title = "Pet food" }) => {
   const [products, setProducts] = useState([]);
@@ -14,12 +13,20 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
       try {
         const response = await fetch("http://localhost:3000/products");
         if (!response.ok) throw new Error("Ошибка при загрузке товаров");
-        
+
         let data = await response.json();
-        
-        // Фильтруем товары, если передан categoryId (например, для игрушек)
+
+        // Фильтруем товары, если передан categoryId
         if (categoryId) {
-          data = data.filter((product) => product.categoryId === categoryId);
+          // Если передан массив (например, [1, 2]), проверяем, входит ли id товара в массив
+          if (Array.isArray(categoryId)) {
+            data = data.filter((product) =>
+              categoryId.includes(product.categoryId),
+            );
+          } else {
+            // Если передано одно число (например, 3), сравниваем напрямую
+            data = data.filter((product) => product.categoryId === categoryId);
+          }
         }
 
         setProducts(data);
@@ -30,7 +37,7 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
       }
     };
     fetchProducts();
-  }, [categoryId]); // Добавляем зависимость, чтобы React обновлял список при смене категории
+  }, [categoryId]); // зависимость, чтобы React обновлял список при смене категории
 
   if (loading) return <p>Загрузка...</p>;
   if (error) return <p>Ошибка: {error}</p>;
@@ -38,7 +45,6 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
   return (
     <div className="products__container">
       <div className="products__header">
-        {/* Теперь заголовок динамический */}
         <h3 className="products__title">{title}</h3>
         <img src={paw} alt="little paw" className="products__paw-icon" />
       </div>
@@ -79,7 +85,10 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
               <div className="product-actions">
                 <button className="product-buy-btn">Buy Now</button>
 
-                <button className="product-cart-btn" aria-label="Добавить в корзину">
+                <button
+                  className="product-cart-btn"
+                  aria-label="Добавить в корзину"
+                >
                   {/* Иконка корзины (SVG) */}
                   <svg
                     width="20"
