@@ -36,7 +36,7 @@ body {
 .register_container {
     display: flex;
     justify-content: center;
-    margin-top: 7px;
+    margin: 40px 0px;
     flex-direction: row;
     gap: 20px;
 }

@@ -8,7 +8,7 @@ export function Header() {
   const [cartCount, setCartCount] = useState(0);
   const [isAuth, setIsAuth] = useState(false);
 
-  // Функция загрузки корзины (объявлена ВНЕ useEffect)
+  // Функция загрузки корзины (объявлена вне useEffect)
   const fetchCart = async () => {
     try {
       const res = await fetch("http://localhost:3000/carts/my", {
@@ -17,7 +17,7 @@ export function Header() {
       if (res.ok) {
         const data = await res.json();
         setIsAuth(true);
-        // Считаем общее количество товаров (а не позиций)
+        // общее количество товаров (не позиций)
         const totalItems =
           data.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
         setCartCount(totalItems);
@@ -103,9 +103,15 @@ export function Header() {
               Профиль
             </Link>
           ) : (
-            <Link to="/login" className="header__auth-link">
-              Register / Login
-            </Link>
+            <div className="header__auth-group">
+              <Link to="/register" className="header__auth-link">
+                Register
+              </Link>
+              <span className="header__auth-divider"> / </span>
+              <Link to="/login" className="header__auth-link">
+                Login
+              </Link>
+            </div>
           )}
         </div>
       </div>
