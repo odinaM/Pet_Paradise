@@ -52,7 +52,6 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
       alert(data?.error || "Ошибка");
       return;
     }
-    alert("Товар добавлен в корзину");
     window.dispatchEvent(new Event("cartUpdated"));
   };
 

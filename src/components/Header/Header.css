@@ -92,20 +92,20 @@
 /* кружок с цифрой */
 .header__cart-badge {
     position: absolute;
-    top: -6px;
+    top: -4px;
     right: -8px;
-    background-color: #ff8a3d;
+    background-color: #ff3b4f;
     color: #ffffff;
     font-size: 11px;
     font-weight: 700;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
 }
 
 .header__cart-btn:hover {
@@ -132,4 +132,25 @@
 
 .header__auth-link:hover {
     color: #4b0082;
+}
+
+/* Группа для регистрации и входа */
+.header__auth-group {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+}
+
+/* Убираем лишний отступ слева у ссылок внутри группы, так как отступ уже задан группе */
+.header__auth-group .header__auth-link {
+    margin-left: 0;
+}
+
+/* Разделитель "/" */
+.header__auth-divider {
+    font-family: 'Assistant', sans-serif;
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 4px;
 }
