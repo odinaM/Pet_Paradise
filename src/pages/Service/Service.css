@@ -1,7 +1,19 @@
-/*Обёртка страницы*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .service {
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   font-family: 'Assistant', sans-serif;
 }
@@ -9,27 +21,26 @@
 /*Первая секция*/
 .section_service__hero {
   width: 100%;
-  height: 685px;
+  min-height: 685px;
   display: flex;
   justify-content: center;
   background-image: url('../../assets/img/fonService.png');
   background-size: cover;
-  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 50px;
 }
 
 .service__hero-inner {
-  width: 1200px;
-  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-/*Текстовый блок*/
 .service__hero-text {
   margin-top: 320px;
-
 }
 
 .service__title {
@@ -37,9 +48,8 @@
   font-size: 36px;
   font-weight: 700;
   color: #410075;
-  margin: 0;
+  margin: 0 0 5px 0;
   line-height: 1.2;
-  margin-bottom: 5px;
 }
 
 .service__subtitle {
@@ -58,64 +68,66 @@
   color: #595959;
   margin-top: 24px;
   line-height: 1.3;
-  width: 345px;
+  max-width: 345px;
   margin-left: 0;
 }
+
 
 /*вторая секция*/
 .section-service_cards {
   width: 100%;
-  height: 210px;
+  min-height: 210px;
   background-color: #FFFFFF;
   margin-bottom: 100px;
 }
 
 .service_cards_inner {
-  width: 1200px;
-  height: 100%;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 0 20px;
 }
 
 .service_mini_card {
-  width: 387px;
-  height: 210px;
+  flex: 1 1 0;
+  max-width: 387px;
+  min-width: 0;
+  min-height: 210px;
   border-radius: 10px;
   border: none;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mini_card_1 {
   background-color: #D9D9D9;
-  padding-top: 20px;
-  padding-left: 21px;
-  padding-bottom: 20px;
+  padding: 20px 21px;
 }
 
 .mini_card_2 {
   background-color: #F2E2FF;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  padding: 20px 20px;
 }
 
 .mini_card_3 {
   background-color: #E8A8AA;
-  padding-top: 19.5px;
-  padding-left: 20.5px;
-  padding-bottom: 20.5px;
+  padding: 19.5px 20.5px 20.5px;
 }
 
 .service_card_info {
-  width: 163px;
-  height: 170px;
-  margin-left: 0;
+  width: 100%;
+  max-width: 163px;
+  height: auto;
   position: relative;
   z-index: 2;
 }
+
 
 .service_card_title {
   font-size: 18px;
@@ -126,8 +138,9 @@
 
 .service_card_title_2 {
   display: flex;
-  height: 48px;
+  height: auto;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .service_card_desc_1,
@@ -135,23 +148,13 @@
   font-size: 18px;
   line-height: 22px;
   color: #595959;
+  margin: 12px 0;
 }
 
 .service_card_desc_2 {
   font-size: 12px;
   color: #595959;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.service_card_desc_1 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.service_card_desc_3 {
-  margin-top: 17px;
-  margin-bottom: 17px;
+  margin: 15px 0;
 }
 
 .service_card_btn {
@@ -162,6 +165,9 @@
   color: #FFFFFF;
   font-size: 12px;
   border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .service_card_btn:hover {
@@ -170,12 +176,17 @@
   color: #410075;
 }
 
-.service_mini_card>img {
+/*Картинки собак*/
+.service_mini_card > img {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 250px;
+  height: 90%;
+  max-height: 250px;
   width: auto;
+  max-width: 60%;
+  object-fit: contain;
+  object-position: bottom right;
   z-index: 1;
   pointer-events: none;
 }
@@ -183,17 +194,18 @@
 /*третья секция*/
 .section_service_offers {
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   background-color: #FFFFFF;
   margin-bottom: 50px;
 }
 
 .service_block_offers {
-  width: 794px;
-  height: 198px;
+  width: 100%;
+  max-width: 794px;
+  min-height: 198px;
   margin: 0 auto;
-  margin-top: 0;
   display: block;
+  padding: 0 20px;
 }
 
 .service_title_offers {
@@ -213,284 +225,192 @@
 }
 
 /* 4 section */
-
 .section_service_training {
   width: 100%;
-  height: 1930px;
+  min-height: 1930px;
   background-image: url(../../assets/img/fon_section4\ .png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   margin-top: 50px;
-  padding-top: 32px;
+  padding: 32px 20px 0;
 }
 
 .service_training_allBlocks {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: auto;
   margin: 0 auto;
 }
 
 .service_training_block {
-  width: 1200px;
-  margin: 0 auto;
-  height: 266px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 55px;
+  min-height: 266px;
   display: flex;
   align-items: center;
-  margin-bottom: 55px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.servise_training_inf1 {
-  width: 488px;
-  height: 150px;
+.servise_training_inf1,
+.servise_training_inf2,
+.servise_training_inf3,
+.servise_training_inf4,
+.servise_training_inf5,
+.servise_training_inf6 {
+  width: auto;
+  max-width: 488px;
+  height: auto;
   display: flex;
   align-items: center;
 }
 
-.service_training_text1 {
-  width: 387px;
-  height: 150px;
-
+.service_training_text1,
+.service_training_text2,
+.service_training_text3,
+.service_training_text4,
+.service_training_text5,
+.service_training_text6 {
+  width: auto;
+  max-width: 388px;
+  height: auto;
 }
 
-.service_training_title1 {
+.service_training_title1,
+.service_training_title2,
+.service_training_title3,
+.service_training_title4,
+.service_training_title5,
+.service_training_title6 {
   font-size: 28px;
   font-weight: bold;
   line-height: 36px;
-  text-align: right;
   color: #252525;
+  margin: 0 0 8px 0;
 }
 
-.service_training_desc1 {
+.service_training_desc1,
+.service_training_desc2,
+.service_training_desc3,
+.service_training_desc4,
+.service_training_desc5,
+.service_training_desc6 {
   font-size: 18px;
   line-height: 22px;
   color: #252525;
+  margin: 0;
+  width: auto;
+  max-width: 388px;
+}
+
+.service_training_title1,
+.service_training_title3,
+.service_training_title5,
+.service_training_desc1,
+.service_training_desc3,
+.service_training_desc5 {
   text-align: right;
+}
+
+.service_training_title2,
+.service_training_title4,
+.service_training_title6,
+.service_training_desc2,
+.service_training_desc4,
+.service_training_desc6 {
+  text-align: left;
+}
+
+.service_training_number1,
+.service_training_number2,
+.service_training_number3,
+.service_training_number4,
+.service_training_number5,
+.service_training_number6 {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  margin-left: 21px;
 }
 
 .service_training_number1,
 .service_training_number3,
 .service_training_number5 {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
   background-color: #410075;
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 48px;
-  padding-top: 12px;
-  color: #FFFFFF;
-  margin-left: 21px;
 }
 
 .service_training_number2,
 .service_training_number4,
 .service_training_number6 {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
   background-color: #8B0004;
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 48px;
-  padding-top: 12px;
-  color: #FFFFFF;
-  margin-left: 21px;
 }
 
-.service_training_img>img {
-  width: 590px;
-  height: 260px;
-}
-
-.service_training_img {
-  width: 590px;
-  height: 260px;
-}
-
-.servise_training_inf2 {
-  width: 387px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-}
-
-.service_training_text2 {
-  width: 285px;
-  height: 150px;
-}
-
-.service_training_title2 {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 36px;
-  text-align: left;
-  color: #252525;
-}
-
-.service_training_desc2 {
-  font-size: 18px;
-  line-height: 22px;
-  color: #252525;
-  text-align: left;
-  letter-spacing: 0%;
-  width: 285px;
-  margin-left: 0;
-}
-
-.servise_training_inf3 {
-  width: 488px;
-  height: 106px;
-  display: flex;
-  align-items: center;
-}
-
-.service_training_text3 {
-  width: 388px;
-  height: 106px;
-}
-
-.service_training_title3 {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 36px;
-  text-align: right;
-  color: #252525;
-}
-
-.service_training_desc3 {
-  font-size: 18px;
-  line-height: 22px;
-  color: #252525;
-  text-align: right;
-}
-
-.servise_training_inf4 {
-  width: 488px;
-  height: 128px;
-  display: flex;
-  align-items: center;
-}
-
-.service_training_text4 {
-  width: 388px;
-  height: 128px;
-}
-
-.service_training_title4 {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 36px;
-  text-align: left;
-  color: #252525;
-}
-
-.service_training_desc4 {
-  font-size: 18px;
-  line-height: 22px;
-  color: #252525;
-  text-align: left;
-}
-
-.servise_training_inf5 {
-  width: 488px;
-  height: 128px;
-  display: flex;
-  align-items: center;
-}
-
-.service_training_text5 {
-  width: 388px;
-  height: 128px;
-}
-
-.service_training_title5 {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 36px;
-  text-align: right;
-  color: #252525;
-}
-
-.service_training_desc5 {
-  font-size: 18px;
-  line-height: 22px;
-  color: #252525;
-  text-align: right;
-}
-
-.servise_training_inf6 {
-  width: 488px;
-  height: 128px;
-  display: flex;
-  align-items: center;
-}
-
-.service_training_text6 {
-  width: 388px;
-  height: 128px;
-}
-
-.service_training_title6 {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 36px;
-  text-align: left;
-  color: #252525;
-}
-
-.service_training_desc6 {
-  font-size: 18px;
-  line-height: 22px;
-  color: #252525;
-  text-align: left;
+.service_training_img,
+.service_training_img > img {
+  width: 100%;
+  max-width: 590px;
+  height: auto;
+  object-fit: cover;
 }
 
 /* стиль для модалок */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .modal-window {
-  width: 890px;
-  height: 500px;
+  width: 100%;
+  max-width: 890px;
+  min-height: 500px;
   background-color: #F2E2FF;
   border-radius: 10px;
-  padding-top: 33px;
-  padding-left: 55px;
-  padding-right: 0;
+  padding: 33px 0 33px 55px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
 
 .service_modal {
-  width: 835px;
-  height: 435px;
+  width: 100%;
+  max-width: 835px;
+  height: auto;
+  min-height: 435px;
   display: flex;
   align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .servise_modal_info {
-  width: 545px;
-  height: 426px;
-  padding-top: 24px;
-  padding-left: 20px;
+  width: 100%;
+  max-width: 545px;
+  height: auto;
+  min-height: 426px;
+  padding: 24px 0 0 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
 
 .servise_modal_title {
-  width: 327px;
+  width: 100%;
+  max-width: 327px;
   font-family: 'Assistant', sans-serif;
   font-size: 38px;
   line-height: 34px;
@@ -526,8 +446,10 @@
 }
 
 .servise_modal_img {
-  width: 268px;
-  height: 435px;
+  width: 100%;
+  max-width: 268px;
+  height: auto;
+  min-height: 435px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
