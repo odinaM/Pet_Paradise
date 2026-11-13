@@ -36,7 +36,6 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
     fetchProducts();
   }, [categoryId]);
 
-  // 👇 добавленная функция
   const addToCart = async (productId) => {
     const res = await fetch("http://localhost:3000/cart-items", {
       method: "POST",
@@ -54,6 +53,7 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
       return;
     }
     alert("Товар добавлен в корзину");
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   if (loading) return <p>Загрузка...</p>;

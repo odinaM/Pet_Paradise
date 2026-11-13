@@ -47,6 +47,7 @@ export function Cart() {
       return;
     }
     await loadCart();
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   const removeItem = async (itemId) => {
@@ -58,6 +59,7 @@ export function Cart() {
       return;
     }
     await loadCart();
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   const clearCart = async () => {
@@ -68,6 +70,7 @@ export function Cart() {
       return;
     }
     await loadCart();
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   // 401 — не залогинен
@@ -141,9 +144,7 @@ export function Cart() {
                 <h3 className="cart__item-name">{item.product.name}</h3>
 
                 <div className="cart__item-prices">
-                  <span className="cart__item-price">
-                    {price.toFixed(2)} ₽
-                  </span>
+                  <span className="cart__item-price">{price.toFixed(2)} ₽</span>
                   {oldPrice > price && (
                     <span className="cart__item-old-price">
                       {oldPrice.toFixed(2)} ₽

@@ -6,28 +6,43 @@ import korzina from "../../assets/img/korzina.svg";
 
 export function Header() {
   const [cartCount, setCartCount] = useState(0);
-  const [isAuth, setIsAuth] = useState(false); // залогинен ли юзер
+  const [isAuth, setIsAuth] = useState(false);
 
-  // Проверяем корзину (и заодно — авторизован ли)
-  useEffect(() => {
-    const fetchCart = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/carts/my", {
-          credentials: "include",
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setIsAuth(true);
-          setCartCount(data.items?.length || 0);
-        } else if (res.status === 401) {
-          setIsAuth(false);
-          setCartCount(0);
-        }
-      } catch (err) {
-        console.error("Ошибка загрузки корзины в хедере:", err);
+  // Функция загрузки корзины (объявлена ВНЕ useEffect)
+  const fetchCart = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/carts/my", {
+        credentials: "include",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setIsAuth(true);
+        // Считаем общее количество товаров (а не позиций)
+        const totalItems =
+          data.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+        setCartCount(totalItems);
+      } else if (res.status === 401) {
+        setIsAuth(false);
+        setCartCount(0);
       }
-    };
+    } catch (err) {
+      console.error("Ошибка загрузки корзины в хедере:", err);
+    }
+  };
+
+  // Один useEffect: загрузка + подписка на событие
+  useEffect(() => {
     fetchCart();
+
+    const handleCartUpdate = () => {
+      fetchCart();
+    };
+
+    window.addEventListener("cartUpdated", handleCartUpdate);
+
+    return () => {
+      window.removeEventListener("cartUpdated", handleCartUpdate);
+    };
   }, []);
 
   return (
@@ -76,7 +91,6 @@ export function Header() {
 
         {/* Правая панель */}
         <div className="header__right">
-          {/* Кнопка корзины теперь ведёт на /cart */}
           <Link to="/cart" className="header__cart-btn" aria-label="Корзина">
             <img src={korzina} alt="korzina" className="header__cart-icon" />
             {cartCount > 0 && (
@@ -84,7 +98,6 @@ export function Header() {
             )}
           </Link>
 
-          {/* Ссылка: если авторизован — «Профиль», иначе — «Войти» */}
           {isAuth ? (
             <Link to="/profile" className="header__auth-link">
               Профиль

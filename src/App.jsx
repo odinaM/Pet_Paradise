@@ -6,12 +6,11 @@ import { About } from "./pages/About/About";
 import { Service } from "./pages/Service/Service";
 import { Shop } from "./pages/Shop/Shop";
 import { Register } from "./pages/Register/Register";
-import { Login } from './pages/Login/login'; 
+import { Login } from "./pages/Login/Login";
 import { Contact } from "./pages/Contact/Contact";
 import { Cart } from "./pages/Cart/Cart";
 
 import "./App.css";
-
 
 function App() {
   return (

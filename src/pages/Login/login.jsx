@@ -55,7 +55,7 @@ export function Login() {
     try {
       const response = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
-        credentials: "include", // 👈 ОБЯЗАТЕЛЬНО для сохранения куки сессии
+        credentials: "include", // куки сессии
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: email.trim(),
@@ -66,7 +66,6 @@ export function Login() {
       const data = await response.json();
 
       if (!response.ok) {
-        // Бэкенд возвращает { error: "..." }
         setGeneralError(data.error || "Ошибка при входе");
         return;
       }
@@ -77,9 +76,9 @@ export function Login() {
 
       // Если это админ, можно вести в админку, если юзер — в магазин
       if (data.role === "ADMIN") {
-        navigate("/admin"); // или куда вам нужно
+        navigate("/admin");
       } else {
-        navigate("/shop"); // или на главную
+        navigate("/shop");
       }
     } catch (err) {
       console.error("Ошибка сети:", err);

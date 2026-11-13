@@ -69,7 +69,7 @@ export function Register() {
       setEmailError("");
     }
 
-    // ПРОВЕРКА ПАРОЛЯ: минимум 8 символов, заглавная, цифра, спецсимвол (как в Zod)
+    // проверка поля: минимум 8 символов, заглавная, цифра, спецсимвол
     if (password.trim() === "") {
       setPasswordError("Enter your password");
       hasError = true;
@@ -160,7 +160,7 @@ export function Register() {
       if (!response.ok) {
         // Если бэкенд вернул массив ошибок от Zod (например, неверный телефон)
         if (data.errors && data.errors.length > 0) {
-          alert(data.errors[0].message); // Покажет точную причину, например "Некорректный номер телефона"
+          alert(data.errors[0].message); // точная причина ошибки, например "Некорректный номер телефона"
         } else {
           alert(data.error || "Ошибка при регистрации");
         }

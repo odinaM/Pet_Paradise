@@ -1,4 +1,3 @@
-// src/api.js
 const API_URL = "http://localhost:3000";
 
 export async function apiFetch(path, options = {}) {
