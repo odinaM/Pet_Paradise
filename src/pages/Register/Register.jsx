@@ -138,7 +138,7 @@ export function Register() {
       const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        //credentials: "include",
+        credentials: "include",
         body: JSON.stringify({
           fullName: fullName.trim(),
           phone: phone.trim(),

@@ -8,6 +8,7 @@ import { Shop } from "./pages/Shop/Shop";
 import { Register } from "./pages/Register/Register";
 import { Login } from './pages/Login/login'; 
 import { Contact } from "./pages/Contact/Contact";
+import { Cart } from "./pages/Cart/Cart";
 
 import "./App.css";
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/checkout" element={<div>Checkout page</div>} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/account" element={<div>Account page</div>} />
       </Routes>
       <Footer />

@@ -16,15 +16,12 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
 
         let data = await response.json();
 
-        // Фильтруем товары, если передан categoryId
         if (categoryId) {
-          // Если передан массив (например, [1, 2]), проверяем, входит ли id товара в массив
           if (Array.isArray(categoryId)) {
             data = data.filter((product) =>
               categoryId.includes(product.categoryId),
             );
           } else {
-            // Если передано одно число (например, 3), сравниваем напрямую
             data = data.filter((product) => product.categoryId === categoryId);
           }
         }
@@ -37,7 +34,27 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
       }
     };
     fetchProducts();
-  }, [categoryId]); // зависимость, чтобы React обновлял список при смене категории
+  }, [categoryId]);
+
+  // 👇 добавленная функция
+  const addToCart = async (productId) => {
+    const res = await fetch("http://localhost:3000/cart-items", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ productId, quantity: 1 }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      if (res.status === 401) {
+        alert("Войдите, чтобы добавить товар в корзину");
+        return;
+      }
+      alert(data?.error || "Ошибка");
+      return;
+    }
+    alert("Товар добавлен в корзину");
+  };
 
   if (loading) return <p>Загрузка...</p>;
   if (error) return <p>Ошибка: {error}</p>;
@@ -88,8 +105,8 @@ const ProductList = ({ categoryId, title = "Pet food" }) => {
                 <button
                   className="product-cart-btn"
                   aria-label="Добавить в корзину"
+                  onClick={() => addToCart(product.id)}
                 >
-                  {/* Иконка корзины (SVG) */}
                   <svg
                     width="20"
                     height="20"
