@@ -1,6 +1,5 @@
 .about {
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   font-family: 'Assistant', sans-serif;
 }
@@ -312,4 +311,83 @@
   height: 100%;
   object-fit: contain;
   object-position: bottom;
+}
+/* секция 3 */
+.section3_about{
+    width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../assets/img/PetShop02.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.section3_info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 832px;
+  gap: 20px;
+  width: 488px;
+  margin-top: 207px;
+}
+.species{
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+}
+.section3_desc{
+  font-size: 18px;
+  color:#999999;
+}
+.section3_btn{
+   margin-top: 20px;
+    width: 306px;
+    height: 44px;
+    gap: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: #410075;
+    font-size: 18px;
+}
+/* section 4 */
+.section4_about{
+    width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../assets/img/section4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.section4_card{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 285px;
+  height: 168px;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  width: 60px;
+  height: 60px;
+}
+.number{
+  color: #6AB052;
+  font-weight: bold;
+  font-size: 36px;
+}
+.card_text4{
+  font-size: 24px;
+  color: #CCCCCC;
 }

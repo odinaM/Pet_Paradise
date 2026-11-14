@@ -56,7 +56,7 @@ export function Header() {
         {/* Навигация */}
         <nav className="header__nav">
           <NavLink
-            to="/"
+            to="/about"
             className={({ isActive }) =>
               `header__nav-link ${isActive ? "header__nav-link_active" : ""}`
             }

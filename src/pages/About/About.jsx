@@ -7,6 +7,10 @@ import dog1 from '../../assets/img/dog_card1.png';
 import dog2 from '../../assets/img/dog_card2.png';
 import dogHelp1 from '../../assets/img/dog_help1.png';
 import dogHelp2 from '../../assets/img/dog_help2.png';
+import smiley from '../../assets/img/Smiley.png';
+import bone from '../../assets/img/Bone.png';
+import storefont from '../../assets/img/Storefront.png';
+import user from '../../assets/img/UsersFour.png';
 
 const servicesData = [
   {
@@ -124,6 +128,37 @@ Loving and pampering your pet is not enough, it must also go hand in hand with t
         <div className="section2_photo"><img src={baground} alt="bg" /></div>
       </div>
       {activeCard && <Modal card={activeCard} onClose={() => setActiveCard(null)} />}
+        <div className="section3_about">
+          <div className="section3_info">
+            <p className="species">Species</p>
+            <p className="section3_desc">Each dog has a different breed and characteristics, so their lifestyle, nutrition and even entertainment are different, please bring your pet to our store for advice. by experts</p>
+            <button className="section3_btn">Booking Day For Your Pet Now</button>
+          </div>
+        </div>
+        <div className="section4_about">
+          <div className="cards">
+            <div className="section4_card">
+            <div className="logo"><img src={smiley} alt="s" /></div>
+            <div className="number">1000+</div>
+            <div className="card_text4">Happy Customer</div>
+          </div> 
+           <div className="section4_card">
+            <div className="logo"><img src={bone} alt="b" /></div>
+            <div className="number">823</div>
+            <div className="card_text4">Pet Food Advice</div>
+          </div> 
+           <div className="section4_card">
+            <div className="logo"><img src={storefont} alt="f" /></div>
+            <div className="number">12</div>
+            <div className="card_text4">Branches</div>
+          </div> 
+           <div className="section4_card">
+            <div className="logo"><img src={user} alt="u" /></div>
+            <div className="number">8</div>
+            <div className="card_text4">There are 8 sponsors</div>
+          </div> 
+          </div>
+        </div>
     </main>
   )
 }
