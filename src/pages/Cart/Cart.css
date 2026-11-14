@@ -1,0 +1,249 @@
+.cart {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.cart__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.cart__empty {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.cart__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    border-top: 1px solid #eee;
+    /* Линия сверху списка */
+}
+
+.cart__item {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 140px 120px 40px;
+    /* Колонки: фото, инфо, цена, кол-во, сумма, удалить */
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+    background: transparent;
+}
+
+.cart__item-image {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cart__item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.cart__item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart__item-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+}
+
+.cart__item-stock {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+}
+
+/* Цена за 1 шт. */
+.cart__item-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.cart__item-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #8F00FF;
+}
+
+.cart__item-old-price {
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+/* Контейнер для кнопок + и - */
+.cart__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px;
+    height: 36px;
+    padding: 0 10px;
+}
+
+.cart__quantity button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart__quantity button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.cart__quantity span {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Итоговая сумма за позицию */
+.cart__item-sum {
+    font-size: 16px;
+    font-weight: 700;
+    color: #8F00FF;
+    margin: 0;
+    text-align: right;
+}
+
+/* Кнопка удаления (иконка корзины/урны) */
+.cart__remove {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: opacity 0.2s;
+}
+
+.cart__remove:hover {
+    opacity: 0.7;
+}
+
+.cart__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.cart__total {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cart__total span {
+    color: #8F00FF;
+    font-weight: 700;
+}
+
+.cart__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.cart__btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart__btn--clear {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.cart__btn--clear:hover {
+    background: #e0e0e0;
+}
+
+.cart__btn--checkout {
+    background: #8F00FF;
+    color: #fff;
+}
+
+.cart__btn--checkout:hover {
+    background: #7a00db;
+}
+
+/* Стили для пустой корзины */
+.cart__empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 80px;
+    text-align: center;
+}
+
+.cart__empty-image img {
+    width: 250px;
+    height: 250px;
+}
+
+.cart__empty-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+/* Красивая кнопка, как на макете */
+.cart__btn-empty {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8F00FF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 48px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.cart__btn-empty:hover {
+    background-color: #7a00db;
+}
+
+.cart__btn-empty:active {
+    transform: scale(0.98);
+}
