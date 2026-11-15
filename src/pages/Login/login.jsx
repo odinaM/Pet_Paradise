@@ -114,7 +114,7 @@ export function Login() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit}>
           <div className="input-box">
             <div className="styled-wrapper">
               <input

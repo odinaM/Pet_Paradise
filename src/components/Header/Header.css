@@ -162,3 +162,63 @@
 .header__profile-btn:hover {
     background-color: #d8b4fe;
 }
+
+/* Контейнер для меню профиля */
+.header__profile-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 14px;
+}
+
+/* Кнопка профиля (кружок) */
+.header__profile-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #e9d5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    color: #000;
+    text-decoration: none;
+}
+
+.header__profile-btn:hover {
+    background-color: #d8b4fe;
+}
+
+/* Кнопка "Выйти" (скрыта по умолчанию) */
+.header__logout-btn {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #d32f2f;
+    border: 1px solid #eee;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+
+    /* Скрываем меню */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.header__logout-btn:hover {
+    background-color: #fff0f0;
+}
+
+.header__profile-menu:hover .header__logout-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
