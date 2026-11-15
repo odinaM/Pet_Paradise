@@ -20,9 +20,9 @@ const servicesData = [
       fullDesc: "Regular physical checkups are essential for maintaining your pet's health and well-being. Our experienced veterinarians conduct thorough examinations to assess your pet's overall health, detect any potential issues, and provide preventative care. The checkup includes a review of your pet's medical history, a physical examination, and necessary diagnostic tests. We offer personalized advice and treatment plans to keep your pet healthy and happy, ensuring they receive the best possible care.",
       imgCard: dog1,
       imgModal: dogHelp1,
-      cardClass: 'mini_card_1',
-      titleClass: 'service_card_title',
-      descClass: 'service_card_desc_1',
+      cardClass: 'about_mini_card_1',
+      titleClass: 'about_card_title',
+      descClass: 'about_card_desc_1',
     },
     {
       id: 2,
@@ -31,9 +31,9 @@ const servicesData = [
       fullDesc: "Our pet spa offers a luxurious and relaxing experience for your furry friends. We provide a range of grooming services, including baths, haircuts, nail trimming, and ear cleaning, all designed to keep your pet looking and feeling their best. Our skilled groomers use gentle, pet-friendly products to ensure a soothing experience. Whether it's a refreshing bath or a full grooming session, your pet will leave our spa feeling pampered and rejuvenated.",
       imgCard: dog2,
       imgModal: dogHelp2, 
-      cardClass: 'mini_card_2',
-      titleClass: 'service_card_title service_card_title_2',
-      descClass: 'service_card_desc_2',
+      cardClass: 'about_mini_card_2',
+      titleClass: 'about_card_title about_card_title_2',
+      descClass: 'about_card_desc_2',
     }
 ];
 function Modal({ card, onClose }) {
@@ -104,16 +104,16 @@ Loving and pampering your pet is not enough, it must also go hand in hand with t
           <p className="about_consulting-desc">Each pet species has a different habitat and behavior, so meet and consult directly with an animal specialist.</p>
           <p className="out_service">Our Service</p>
 
-          <section className="section-service_cards">
-        <div className="service_cards_inner">
+          <section className="section-about_cards">
+        <div className="about_cards_inner">
           {servicesData.map((card) => (
-            <div key={card.id} className={`service_mini_card ${card.cardClass}`}>
-              <div className="service_card_info">
+            <div key={card.id} className={`about_mini_card ${card.cardClass}`}>
+              <div className="about_card_info">
                 <h1 className={card.titleClass}>{card.title}</h1>
                 <p className={card.descClass}>{card.shortDesc}</p>
                 
                 <button 
-                  className="service_card_btn" 
+                  className="about_card_btn" 
                   onClick={() => setActiveCard(card)}
                 >
                   Read More

@@ -122,14 +122,14 @@
     margin-bottom: 10px;
 }
 /* карточки */
-.about .section-service_cards {
+ .section-about_cards {
   width: 100%;
   height: 158px;
   background-color: #FFFFFF;
   margin-bottom: 100px;
 }
 
-.about .service_cards_inner {
+.about_cards_inner {
   width: 590px;
   height: 100%;
   margin: 0 auto;
@@ -138,61 +138,60 @@
   gap: 20px;
 }
 
-.about .service_mini_card {
+ .about_mini_card {
   width: 285px;
   height: 158px;
   border-radius: 10px;
   border: none;
   position: relative;
   overflow: visible;
+  
 }
-
-.about .mini_card_1 {
+ .about_mini_card_1 {
   background-color: #DFEFDA;
   padding-top: 15px;
   padding-left: 20px;
   padding-bottom: 15px;
 }
 
-.about .mini_card_2 {
+ .about_mini_card_2 {
   background-color: #F2E2FF;
  padding-top: 15px;
   padding-left: 20px;
   padding-bottom: 15px;
 }
 
-.about .service_card_info {
+.about_card_info {
   width: 139px;
   height: 128px;
   margin-left: 0;
   position: relative;
   z-index: 2;
 }
-
-.about .service_card_title {
+ .about_card_title {
   font-size: 18px;
   font-weight: bold;
-  line-height: 22px;
   color: #252525;
 }
-
-.about .service_card_title_2 {
+ .about_card_title_2 {
   display: flex;
   font-size: 18px;
   align-items: center;
   color: #252525;
+  margin-top: 5px;
 } 
 
-.about .service_card_desc_1,
-.about .service_card_desc_2 {
+.about_card_desc_1,
+.about_card_desc_2 {
   font-size: 12px;
-  line-height: 22px;
   color: #595959;
-   margin-top: 9px;
-  margin-bottom: 0px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
-
-.about .service_card_btn {
+.about_card_desc_2{
+  margin-bottom: 25px;
+}
+ .about_card_btn {
   width: 86px;
   height: 34px;
   border-radius: 5px;
@@ -202,13 +201,12 @@
   border: none;
 }
 
-.about .service_card_btn:hover {
+.about_card_btn:hover {
   border: 2px solid #410075;
   background-color: transparent;
   color: #410075;
 }
-
-.about .service_mini_card>img {
+ .about_mini_card>img {
   position: absolute;
   bottom: 0;
   right: 0;
