@@ -143,7 +143,6 @@ body {
     margin: 0;
     line-height: 1;
     z-index: 1;
-    background-color: #FFFFFF;
 }
 
 /* При фокусе или заполненном поле лейбл уезжает вверх и уменьшается */

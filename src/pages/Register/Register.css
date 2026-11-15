@@ -199,9 +199,7 @@ select {
     color: #999;
     font-size: 18px;
     pointer-events: none;
-    /* Чтобы клик проходил сквозь лейбл в инпут */
     transition: all 0.2s ease-out;
-    background-color: transparent;
 }
 
 /* Состояние когда пользователь начал печатать  */
