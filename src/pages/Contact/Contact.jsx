@@ -86,7 +86,7 @@ export function Contact() {
                                             type="text" 
                                             id="name" 
                                             className="inp_contact" 
-                                            placeholder=" " // Оставляем, чтобы работал фокус
+                                            placeholder=" "
                                             value={name} 
                                             onChange={handleNameChange}
                                         />
@@ -94,6 +94,7 @@ export function Contact() {
                                         {errors.name && <span className="error-inline">{errors.name}</span>}
                                     </div>
                                 </div>
+
 
                                 {/* Phone */}
                                 <div className="input-group">
