@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -17,6 +17,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<About />} /> 
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/shop" element={<Shop />} />
@@ -25,6 +26,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/account" element={<div>Account page</div>} />
+
+        {/* Если введен неверный адрес — перекидывает на главную (About) */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </>
