@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./Contact.css";
 import paw from "../../assets/icons/paw.svg";
 import logoWhite from "../../assets/icons/Logo_contact.svg";
+import { apiFetch } from "../../api";
 
 export function Contact() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ name: "", phone: "", email: "" });
+  const [isLoading, setIsLoading] = useState(false); // cостояние для кнопки "Отправка"
 
   const phoneRegex =
     /^(\+?\d{1,3})?[\s\-()]*\d{3}[\s\-()]*\d{3}[\s\-()]*\d{2}[\s\-()]*\d{2}$/;
@@ -52,12 +54,43 @@ export function Contact() {
     return !newErrors.name && !newErrors.phone && !newErrors.email;
   };
 
-  const handleSubmit = (e) => {
+  //функция отправки
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    alert("Форма успешно отправлена!");
-    handleRefresh();
+    setIsLoading(true);
+
+    try {
+      // данные на бэкенд
+      const { ok, status, data } = await apiFetch("/contacts", {
+        method: "POST",
+        body: JSON.stringify({
+          fullName: name,
+          phone: phone,
+          email: email,
+        }),
+      });
+
+      if (!ok) {
+        // Если бэкенд вернул ошибку от Zod
+        if (data.errors && data.errors.length > 0) {
+          alert(data.errors[0].message);
+        } else {
+          alert(data?.error || "Не удалось отправить сообщение");
+        }
+        return;
+      }
+
+      // Успех!
+      alert(data.message || "Ваше сообщение успешно отправлено!");
+      handleRefresh(); // Очищаем форму
+    } catch (err) {
+      console.error("Ошибка сети:", err);
+      alert("Сервер недоступен. Попробуйте позже.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleRefresh = () => {
@@ -88,7 +121,7 @@ export function Contact() {
                       type="text"
                       id="name"
                       className="inp_contact"
-                      placeholder=" " // фокус
+                      placeholder=" "
                       value={name}
                       onChange={handleNameChange}
                     />
@@ -147,13 +180,19 @@ export function Contact() {
               </div>
 
               <div className="block_buttons_contact">
-                <button type="submit" className="btn_submit_contact">
-                  Submit
+                {/* Блокировка кнопки во время загрузки и замена текста */}
+                <button
+                  type="submit"
+                  className="btn_submit_contact"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Submitting..." : "Submit"}
                 </button>
                 <button
                   type="button"
                   className="btn_refresh_contact"
                   onClick={handleRefresh}
+                  disabled={isLoading}
                 >
                   Refresh
                 </button>
