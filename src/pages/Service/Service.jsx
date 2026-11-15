@@ -104,7 +104,7 @@ export function Service() {
 
   return (
     <main className="service">
-      {/* 1. Секция Hero */}
+      {/* Секция Hero */}
       <section className="section_service__hero">
         <div className="service__hero-inner">
           <div className="service__hero-text">
@@ -143,7 +143,7 @@ export function Service() {
         </div>
       </section>
 
-      {/* 3. Секция WHAT WE OFFER */}
+      {/* Секция WHAT WE OFFER */}
       <section className="section_service_offers">
         <div className="service_block_offers">
           <h1 className="service_title_offers">WHAT WE OFFER</h1>
@@ -161,7 +161,7 @@ export function Service() {
         </div>
       </section>
 
-      {/* 4. Секция Training */}
+      {/*Секция Training */}
       <section className="section_service_training">
         <div className="service_training_allBlocks">
           <div className="service_training_block">

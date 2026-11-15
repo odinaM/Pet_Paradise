@@ -2,21 +2,24 @@ import React, { useState } from "react";
 import "./Contact.css";
 import paw from "../../assets/icons/paw.svg";
 import logoWhite from "../../assets/icons/Logo_contact.svg";
+import { apiFetch } from "../../api";
 
 export function Contact() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ name: "", phone: "", email: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const phoneRegex =
-    /^(\+?\d{1,3})?[\s\-()]*\d{3}[\s\-()]*\d{3}[\s\-()]*\d{2}[\s\-()]*\d{2}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const handlePhoneChange = (e) => {
-    const value = e.target.value;
-    const cleaned = value.replace(/[^\d+\-()\s]/g, "");
-    setPhone(cleaned);
+    // плюс  в начало
+    let val = e.target.value.replace(/[^\d+]/g, "");
+    if (!val.startsWith("+")) {
+      val = "+" + val.replace(/\+/g, "");
+    }
+    setPhone(val);
     if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" }));
   };
 
@@ -37,10 +40,10 @@ export function Contact() {
       newErrors.name = "Enter your name";
     }
 
-    if (!phone.trim()) {
+    if (phone.trim() === "") {
       newErrors.phone = "Enter your phone";
-    } else if (!phoneRegex.test(phone.trim())) {
-      newErrors.phone = "Invalid phone number";
+    } else if (!/^\+\d{10,15}$/.test(phone.trim())) {
+      newErrors.phone = "Phone must start with '+' and contain 10-15 digits";
     }
 
     if (!email.trim()) {
@@ -48,16 +51,45 @@ export function Contact() {
     } else if (!emailRegex.test(email.trim())) {
       newErrors.email = "Invalid email";
     }
+
     setErrors(newErrors);
     return !newErrors.name && !newErrors.phone && !newErrors.email;
   };
 
-  const handleSubmit = (e) => {
+  // Функция отправки
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    alert("Форма успешно отправлена!");
-    handleRefresh();
+    setIsLoading(true);
+
+    try {
+      const { ok, data } = await apiFetch("/contacts", {
+        method: "POST",
+        body: JSON.stringify({
+          fullName: name,
+          phone: phone,
+          email: email,
+        }),
+      });
+
+      if (!ok) {
+        if (data && data.errors && data.errors.length > 0) {
+          alert(data.errors[0].message);
+        } else {
+          alert(data?.error || "Не удалось отправить сообщение");
+        }
+        return;
+      }
+
+      alert(data.message || "Ваше сообщение успешно отправлено!");
+      handleRefresh();
+    } catch (err) {
+      console.error("Ошибка сети:", err);
+      alert("Сервер недоступен. Попробуйте позже.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleRefresh = () => {
@@ -88,7 +120,7 @@ export function Contact() {
                       type="text"
                       id="name"
                       className="inp_contact"
-                      placeholder=" " // фокус
+                      placeholder=" "
                       value={name}
                       onChange={handleNameChange}
                     />
@@ -108,11 +140,11 @@ export function Contact() {
                   >
                     <input
                       type="tel"
-                      id="phone"
-                      className="inp_contact"
-                      placeholder=" "
                       value={phone}
                       onChange={handlePhoneChange}
+                      className="inp_contact"
+                      id="phone"
+                      placeholder=" "
                     />
                     <label htmlFor="phone" className="floating-label">
                       Phone number
@@ -147,13 +179,18 @@ export function Contact() {
               </div>
 
               <div className="block_buttons_contact">
-                <button type="submit" className="btn_submit_contact">
-                  Submit
+                <button
+                  type="submit"
+                  className="btn_submit_contact"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Submitting..." : "Submit"}
                 </button>
                 <button
                   type="button"
                   className="btn_refresh_contact"
                   onClick={handleRefresh}
+                  disabled={isLoading}
                 >
                   Refresh
                 </button>

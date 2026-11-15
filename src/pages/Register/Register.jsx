@@ -12,6 +12,7 @@ export function Register() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // Состояние для глазика
 
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
@@ -52,8 +53,8 @@ export function Register() {
     if (phone.trim() === "") {
       setPhoneError("Enter your phone");
       hasError = true;
-    } else if (!/^\+?\d{10,15}$/.test(phone.trim())) {
-      setPhoneError("Phone must contain 10–15 digits");
+    } else if (!/^\+\d{10,15}$/.test(phone.trim())) {
+      setPhoneError("Phone must start with '+' and contain 10-15 digits");
       hasError = true;
     } else {
       setPhoneError("");
@@ -158,9 +159,8 @@ export function Register() {
       const data = await response.json();
 
       if (!response.ok) {
-        // Если бэкенд вернул массив ошибок от Zod (например, неверный телефон)
         if (data.errors && data.errors.length > 0) {
-          alert(data.errors[0].message); // точная причина ошибки, например "Некорректный номер телефона"
+          alert(data.errors[0].message);
         } else {
           alert(data.error || "Ошибка при регистрации");
         }
@@ -188,7 +188,7 @@ export function Register() {
         </div>
 
         {step === 1 && (
-          <form onSubmit={handleNextSubmit}>
+          <form onSubmit={handleNextSubmit} noValidate>
             <div className="input-box">
               <div className="styled-wrapper">
                 <input
@@ -210,7 +210,16 @@ export function Register() {
                 <input
                   type="tel"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    // плюс в начало
+                    let val = e.target.value.replace(/[^\d+]/g, "");
+                    if (!val.startsWith("+")) {
+                      val = "+" + val.replace(/\+/g, ""); // плюс всегда быть 1
+                    }
+                    setPhone(val);
+                    z;
+                    if (phoneError) setPhoneError("");
+                  }}
                   className={`styled-input ${phoneError ? "input-error" : ""}`}
                   id="phoneNumber"
                   placeholder=" "
@@ -241,7 +250,8 @@ export function Register() {
             <div className="input-box">
               <div className="styled-wrapper">
                 <input
-                  type="password"
+                  // Меняется тип в зависимости от состояния
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className={`styled-input ${passwordError ? "input-error" : ""}`}
@@ -252,6 +262,48 @@ export function Register() {
                   Password
                 </label>
                 {renderError(passwordError)}
+
+                {/* Кнопка-глазик */}
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={
+                    showPassword ? "Скрыть пароль" : "Показать пароль"
+                  }
+                >
+                  {showPassword ? (
+                    // Иконка "перечеркнутый глаз" (скрыт)
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#999"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                      <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                  ) : (
+                    // Иконка "глаз" (открыт)
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#999"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  )}
+                </button>
               </div>
             </div>
 
@@ -262,7 +314,7 @@ export function Register() {
         )}
 
         {step === 2 && (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="input-box">
               <div className="styled-wrapper">
                 <input
@@ -397,7 +449,7 @@ export function Register() {
           <p className="exclusive_text-1">
             Member Benefits: Exclusive Discounts, Rewards
           </p>
-          <p className="exclusive_text-2">
+          <p className="exclusive-text-2">
             Exclusive Discounts: Enjoy special pricing on pet food, toys, and
             accessories.
           </p>
