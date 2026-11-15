@@ -22,6 +22,7 @@ body {
     font-size: 12px;
     margin-top: 4px;
     padding-left: 4px;
+    margin-right: 25px;
 }
 
 .register_form {
@@ -322,4 +323,33 @@ select {
 
 form .submit-btn {
     margin-top: 40px;
+}
+
+.styled-wrapper {
+    position: relative;
+}
+
+/* Кнопка-глазик */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+}
+
+.password-toggle:hover svg {
+    stroke: #410075;
+}
+
+input[type="password"].styled-input,
+input[type="text"].styled-input#password {
+    padding-right: 45px !important;
 }

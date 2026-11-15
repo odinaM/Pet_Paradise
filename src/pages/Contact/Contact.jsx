@@ -9,16 +9,17 @@ export function Contact() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ name: "", phone: "", email: "" });
-  const [isLoading, setIsLoading] = useState(false); // cостояние для кнопки "Отправка"
+  const [isLoading, setIsLoading] = useState(false);
 
-  const phoneRegex =
-    /^(\+?\d{1,3})?[\s\-()]*\d{3}[\s\-()]*\d{3}[\s\-()]*\d{2}[\s\-()]*\d{2}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const handlePhoneChange = (e) => {
-    const value = e.target.value;
-    const cleaned = value.replace(/[^\d+\-()\s]/g, "");
-    setPhone(cleaned);
+    // плюс  в начало
+    let val = e.target.value.replace(/[^\d+]/g, "");
+    if (!val.startsWith("+")) {
+      val = "+" + val.replace(/\+/g, "");
+    }
+    setPhone(val);
     if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" }));
   };
 
@@ -39,10 +40,10 @@ export function Contact() {
       newErrors.name = "Enter your name";
     }
 
-    if (!phone.trim()) {
+    if (phone.trim() === "") {
       newErrors.phone = "Enter your phone";
-    } else if (!phoneRegex.test(phone.trim())) {
-      newErrors.phone = "Invalid phone number";
+    } else if (!/^\+\d{10,15}$/.test(phone.trim())) {
+      newErrors.phone = "Phone must start with '+' and contain 10-15 digits";
     }
 
     if (!email.trim()) {
@@ -50,11 +51,12 @@ export function Contact() {
     } else if (!emailRegex.test(email.trim())) {
       newErrors.email = "Invalid email";
     }
+
     setErrors(newErrors);
     return !newErrors.name && !newErrors.phone && !newErrors.email;
   };
 
-  //функция отправки
+  // Функция отправки
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -62,8 +64,7 @@ export function Contact() {
     setIsLoading(true);
 
     try {
-      // данные на бэкенд
-      const { ok, status, data } = await apiFetch("/contacts", {
+      const { ok, data } = await apiFetch("/contacts", {
         method: "POST",
         body: JSON.stringify({
           fullName: name,
@@ -73,8 +74,7 @@ export function Contact() {
       });
 
       if (!ok) {
-        // Если бэкенд вернул ошибку от Zod
-        if (data.errors && data.errors.length > 0) {
+        if (data && data.errors && data.errors.length > 0) {
           alert(data.errors[0].message);
         } else {
           alert(data?.error || "Не удалось отправить сообщение");
@@ -82,9 +82,8 @@ export function Contact() {
         return;
       }
 
-      // Успех!
       alert(data.message || "Ваше сообщение успешно отправлено!");
-      handleRefresh(); // Очищаем форму
+      handleRefresh();
     } catch (err) {
       console.error("Ошибка сети:", err);
       alert("Сервер недоступен. Попробуйте позже.");
@@ -141,11 +140,11 @@ export function Contact() {
                   >
                     <input
                       type="tel"
-                      id="phone"
-                      className="inp_contact"
-                      placeholder=" "
                       value={phone}
                       onChange={handlePhoneChange}
+                      className="inp_contact"
+                      id="phone"
+                      placeholder=" "
                     />
                     <label htmlFor="phone" className="floating-label">
                       Phone number
@@ -180,7 +179,6 @@ export function Contact() {
               </div>
 
               <div className="block_buttons_contact">
-                {/* Блокировка кнопки во время загрузки и замена текста */}
                 <button
                   type="submit"
                   className="btn_submit_contact"
